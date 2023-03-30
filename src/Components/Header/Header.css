@@ -1,0 +1,84 @@
+.header {
+  padding-left: 0px;
+  padding-right: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: white;
+  width: "100%";
+  margin: 0;
+}
+
+.logoImage {
+  padding-left: 29px;
+  padding-right: 12px;
+}
+
+.logoImage:hover {
+  cursor: pointer;
+}
+
+.trainingIcon {
+  margin-left: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 18px;
+}
+
+.trainingIcon:hover {
+  background-color: #e7e7e7;
+  cursor: pointer;
+}
+
+.supportIcon {
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 18px;
+}
+
+.supportIcon:hover {
+  background-color: #e7e7e7;
+  cursor: pointer;
+}
+
+.userPopUp {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.userPopUp:hover {
+  background-color: #e7e7e7;
+  cursor: pointer;
+}
+.avatarDetail {
+  font-size: 12px;
+  padding: 10px;
+  padding-left: 5px;
+}
+.avatarName {
+  font-size: 14px;
+  font-weight: bold;
+}
+.signOutBar {
+  text-align: center;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.signOutBar:hover {
+  background-color: #e7e7e7;
+}
+
+.ant-popover .ant-popover-inner {
+  padding: 0px;
+}
+
+.avatarPop {
+  padding: 5px;
+}
+
+.avatarDetailImage {
+  padding: 10px;
+  padding-right: 0px;
+}

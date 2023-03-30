@@ -1,0 +1,15 @@
+.button {
+  border: none;
+}
+
+.content {
+  overflow-y: auto; 
+}
+.ant-table-cell {
+  padding: 5px !important;
+  min-width: 100px;
+}
+.ant-table-content {
+  margin: 10px 0px 0px 20px;
+}
+

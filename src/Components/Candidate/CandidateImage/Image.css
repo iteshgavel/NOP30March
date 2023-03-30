@@ -1,0 +1,19 @@
+.avatar-uploader{
+    margin-left: 1%;
+}
+
+#root > div > div.main > div.content > div > div > div.image > span > div{
+    width : 10vw;
+    height: 10vw;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+#root > div > div.main > div.content > div > div > div.image > span{
+    width: 15vw;
+}
+
+#root > div > div > div.content > div > div.image > span > div{
+    width: 10vw;
+    height: 10vw;
+}

@@ -1,0 +1,13 @@
+.cardButton{
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+#root > div > div > div.content > div > div.educationInfo > div:nth-child(1) > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div > div > div > table{
+    width: 50vw;
+}
+
+#root > div > div > div.content > div > div.educationInfo > div:nth-child(2) > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div > div > div > table{
+    width: 50vw;
+}
