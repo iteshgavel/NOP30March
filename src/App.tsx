@@ -16,12 +16,12 @@ function App() {
   const [collapsed, setCollapsed] = React.useState(false);
   return (
     <>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <div className="App">
           <Header />
           <div className="main">
             <Nav collapsed={collapsed} setCollapsed={setCollapsed} />
-            <div className="content">
+            <div className="content" style={{width: "100%"}}>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Home" element={<Home />} />
@@ -43,8 +43,7 @@ function App() {
           </div>
           <RemoveScrollBar />
         </div>
-      </BrowserRouter> */}
-      <HireSummary/>
+      </BrowserRouter>
     </>
   );
 }

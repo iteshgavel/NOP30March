@@ -10,9 +10,9 @@ import {
   Select,
 } from "antd";
 
-import { CaretDownOutlined, RedoOutlined } from "@ant-design/icons";
+import { CaretDownOutlined, RedoOutlined, SearchOutlined } from "@ant-design/icons";
 import { rdata, rDataType } from "../Candidate/DummyCandidateData";
-import '../Interview/Interview.css';
+
 const { Option } = Select;
 
 //Dinamically getting all college names from table.
@@ -554,6 +554,7 @@ const FilterPanBar = (props: any) => {
 
   return (
     <div
+      className="filterBody"
       style={{
         width: "100%",
         display: "flex",
@@ -565,9 +566,10 @@ const FilterPanBar = (props: any) => {
     >
       <div className="search">
         <Input
+        prefix={<SearchOutlined />}
         className="searchbox"
-          style={{marginLeft: "27px"}}
-          placeholder=" Search By Name"
+          style={{marginLeft: "12px"}}
+          placeholder="Search By Name"
           value={props.searchedText}
           onChange={(e) => props.setSearchedText(e.target.value)}
         />

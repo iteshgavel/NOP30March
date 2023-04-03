@@ -6,7 +6,6 @@ function Interview() {
   return (
     <>
       <div className="interview"> Interview </div>
-
       <div className="Interview-header">
           Candidates
       </div>

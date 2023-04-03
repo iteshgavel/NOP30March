@@ -8,8 +8,11 @@ import NewCandidateRoleApplied from "./NewCandidateRoleApplied";
 
 const CandidateDetail = (props: any) => {
   //State to update candidateObject
-  const [candidateName, setCandidateName] = useState("");
-  const [candidateEmail, setCandidateEmail] = useState("");
+
+  // const [candidateName, setCandidateName] = useState("");
+  // const [candidateEmail, setCandidateEmail] = useState("");
+  const [personal, setPersonal] = useState({name: "", email: ""});
+
   const [candidateSsc, setCandidateSsc] = useState("");
   const [candidateHsc, setCandidateHsc] = useState("");
   const [candidateDiplomaBranch, setCandidateDiplomaBranch] = useState("");
@@ -24,11 +27,16 @@ const CandidateDetail = (props: any) => {
   const [candidatePgCourse, setCandidatePgCourse] = useState("");
   const [candidatePgBranch, setCandidatePgBranch] = useState("");
   const [candidatePgScore, setCandidatePgScore] = useState("");
-  const [candidateEmployer, setCandidateEmployer] = useState("");
-  const [candidateDesignation, setCandidateDesignation] = useState("");
-  const [candidateStartDate, setCandidateStartDate] = useState("");
-  const [candidateEndDate, setCandidateEndDate] = useState("");
-  const [candidateApplyingFor, setCandidateApplyingFor] = useState("");
+  //const [academic, setAcademic] = useState({});
+
+  // const [candidateEmployer, setCandidateEmployer] = useState("");
+  // const [candidateDesignation, setCandidateDesignation] = useState("");
+  // const [candidateStartDate, setCandidateStartDate] = useState("");
+  // const [candidateEndDate, setCandidateEndDate] = useState("");
+  const [employment, setEmployment] = useState({employer: "", designation: "", startDate: "", endDate: ""});
+
+  //const [candidateApplyingFor, setCandidateApplyingFor] = useState("");
+  const [applyingFor, setApplyingFor] = useState({applyingFor: ""});
 
   //state to change step in form
   const [current, setCurrent] = useState(0);
@@ -41,8 +49,10 @@ const CandidateDetail = (props: any) => {
   };
 
   const resetState = () => {
-    setCandidateName("");
-    setCandidateEmail("");
+    // setCandidateName("");
+    // setCandidateEmail("");
+    setPersonal({name: "", email: ""});
+
     setCandidateSsc("");
     setCandidateHsc("");
     setCandidateDiplomaBranch("");
@@ -57,11 +67,15 @@ const CandidateDetail = (props: any) => {
     setCandidatePgCourse("");
     setCandidatePgBranch("");
     setCandidatePgScore("");
-    setCandidateEmployer("");
-    setCandidateDesignation("");
-    setCandidateStartDate("");
-    setCandidateEndDate("");
-    setCandidateApplyingFor("");
+
+    // setCandidateEmployer("");
+    // setCandidateDesignation("");
+    // setCandidateStartDate("");
+    // setCandidateEndDate("");
+    setEmployment({employer: "", designation: "", startDate: "", endDate: ""});
+
+    //setCandidateApplyingFor("");
+    setApplyingFor({applyingFor: ""});
   };
 
   const steps = [
@@ -70,10 +84,12 @@ const CandidateDetail = (props: any) => {
       content: (
         <NewCandidatePersonalDetail
           callPersonal={next}
-          candidateName={candidateName}
-          setCandidateName={setCandidateName}
-          candidateEmail={candidateEmail}
-          setCandidateEmail={setCandidateEmail}
+          // candidateName={candidateName}
+          // setCandidateName={setCandidateName}
+          // candidateEmail={candidateEmail}
+          // setCandidateEmail={setCandidateEmail}
+          personal={personal}
+          setPersonal={setPersonal}
         />
       ),
     },
@@ -120,14 +136,17 @@ const CandidateDetail = (props: any) => {
         <NewCandidateEmploymentDetail
           callEmploymentNext={next}
           callEmploymentPrev={prev}
-          candidateEmployer={candidateEmployer}
-          setCandidateEmployer={setCandidateEmployer}
-          candidateDesignation={candidateDesignation}
-          setCandidateDesignation={setCandidateDesignation}
-          candidateStartDate={candidateStartDate}
-          setCandidateStartDate={setCandidateStartDate}
-          candidateEndDate={candidateEndDate}
-          setCandidateEndDate={setCandidateEndDate}
+          // candidateEmployer={candidateEmployer}
+          // setCandidateEmployer={setCandidateEmployer}
+          // candidateDesignation={candidateDesignation}
+          // setCandidateDesignation={setCandidateDesignation}
+          // candidateStartDate={candidateStartDate}
+          // setCandidateStartDate={setCandidateStartDate}
+          // candidateEndDate={candidateEndDate}
+          // setCandidateEndDate={setCandidateEndDate}
+
+          employment={employment}
+          setEmployment={setEmployment}
         />
       ),
     },
@@ -137,8 +156,10 @@ const CandidateDetail = (props: any) => {
         <NewCandidateRoleApplied
           callRoleAppliedPrev={prev}
           modalOnOk={props.modalOnOk}
-          candidateApplyingFor={candidateApplyingFor}
-          setCandidateApplyingFor={setCandidateApplyingFor}
+          // candidateApplyingFor={candidateApplyingFor}
+          // setCandidateApplyingFor={setCandidateApplyingFor}
+          applyingFor={applyingFor}
+          setApplyingFor={setApplyingFor}
           setCurrent={setCurrent}
           resetState={resetState}
         />
