@@ -1,15 +1,27 @@
-.button {
-  border: none;
+.candidate-table .ant-table-content {
+  border: 20px;
+  border-color: #f3f6f9;
+  margin: 0px 0px 0px 27px;
+  font: normal normal normal 16px/14px Segoe UI;
+
 }
 
-.content {
-  overflow-y: auto; 
+.candidate-table .ant-table-container {
+  border: 20px;
+  border-color: #f3f6f9;
 }
-.ant-table-cell {
-  padding: 5px !important;
-  min-width: 100px;
+
+
+.candidate-table .ant-table-thead .ant-table-cell {
+  background: #f8f8f8;
 }
-.ant-table-content {
-  margin: 10px 0px 0px 20px;
+
+.candidate-table .ant-table-tbody .ant-table-cell {
+  background: white;
+}
+
+.ant-checkbox-wrapper .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #ffcc00;
+  border-color: #ffcc00;
 }
 

@@ -1,0 +1,12 @@
+.totalCandidate{
+    padding: 10px;
+    background-color: #e6e6e6;
+    font-size: 30px;
+    align-items: left;
+    opacity: 1;
+}
+
+.hireSummaryTable{
+    padding: 10px;
+    background-color: #e6e6e6;
+}

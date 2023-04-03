@@ -1,14 +1,12 @@
 .App {
   display: grid;
-  /* width: calc(100vw - 34px); */
   font-family: "Segoe UI VSS (Regular)", "Segoe UI", "-apple-system",
     BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Ubuntu, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 .main {
   display: flex;
-  flex-direction: row;
-  width: calc(100vw - 34px);
+  flex-direction: row; 
 }
 
 ::-webkit-scrollbar {

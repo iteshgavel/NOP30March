@@ -9,12 +9,14 @@ import Summary from "./Pages/Summary";
 import Header from "./Components/Header/Header";
 import { RemoveScrollBar } from "react-remove-scroll-bar";
 import CandidateInfo from "./Components/Candidate/CandidateInformation/CandidateInfomation";
+import InterviewInfo from "./Components/Interview/InterviewInfo";
+import HireSummary from "./Components/HireSummary/HireSummary";
 
 function App() {
   const [collapsed, setCollapsed] = React.useState(false);
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <div className="App">
           <Header />
           <div className="main">
@@ -35,12 +37,14 @@ function App() {
                 <Route path="/interview" element={<Interview />} />
                 <Route path="/summary" element={<Summary />} />
                 <Route path="/candidate/Name" element={<CandidateInfo />} />
+                <Route path="/Interview/Info" element={<InterviewInfo/>}/>
               </Routes>
             </div>
           </div>
           <RemoveScrollBar />
         </div>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <HireSummary/>
     </>
   );
 }

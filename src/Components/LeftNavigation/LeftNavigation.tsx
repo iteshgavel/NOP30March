@@ -1,5 +1,6 @@
 import React from "react";
 import "./LeftNavigation.css";
+import { useState, useEffect } from 'react';
 
 import { FileTextFilled } from "@ant-design/icons";
 import { Button, Menu } from "antd";
@@ -18,11 +19,26 @@ function Nav(props: any) {
 
   let navigate = useNavigate();
 
+  const [selectedKey, setSelectedKey] = useState(
+    localStorage.getItem('selectedKey') || 'defaultKey'
+  );
+
+  const handleMenuClick = (event:any) => {
+    const key = event.key;
+    setSelectedKey(key);
+    localStorage.setItem('selectedKey', key);
+  };
+
+  useEffect(() => {
+    localStorage.setItem('selectedKey', selectedKey);
+  }, [selectedKey]);
+
+
   return (
     <div>
       <Menu
-        defaultSelectedKeys={["1"]}
-        defaultOpenKeys={["sub1"]}
+        onClick={handleMenuClick}
+        selectedKeys={[selectedKey]}
         mode="inline"
         theme="light"
         inlineCollapsed={props.collapsed}

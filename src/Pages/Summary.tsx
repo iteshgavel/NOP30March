@@ -1,8 +1,9 @@
 import React from 'react'
+import HireSummary from '../Components/HireSummary/HireSummary'
 
 function Summary() {
   return (
-    <h1>Welcome to Summary Page</h1>
+    <HireSummary/>
   )
 }
 

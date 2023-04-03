@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import InterviewGrid from "../Components/Interview/InterviewGrid";
+import "../Components/Interview/Interview.css";
 
 function Interview() {
   return (
-    <h1>Welcome to Interview Page</h1>
-  )
+    <>
+      <div className="interview"> Interview </div>
+
+      <div className="Interview-header">
+          Candidates
+      </div>
+
+      <InterviewGrid />
+    </>
+  );
 }
 
-export default Interview
+export default Interview;

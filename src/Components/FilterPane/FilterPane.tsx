@@ -12,6 +12,7 @@ import {
 
 import { CaretDownOutlined, RedoOutlined } from "@ant-design/icons";
 import { rdata, rDataType } from "../Candidate/DummyCandidateData";
+import '../Interview/Interview.css';
 const { Option } = Select;
 
 //Dinamically getting all college names from table.
@@ -558,10 +559,13 @@ const FilterPanBar = (props: any) => {
         display: "flex",
         justifyContent: "start",
         alignItems: "center",
+        paddingTop: "10px",
+        paddingBottom: "10px",
       }}
     >
-      <div >
+      <div className="search">
         <Input
+        className="searchbox"
           style={{marginLeft: "27px"}}
           placeholder=" Search By Name"
           value={props.searchedText}

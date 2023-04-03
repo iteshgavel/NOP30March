@@ -18,6 +18,7 @@ import {
 
 import type { ColumnsType } from "antd/es/table";
 import ScheduleModal from "./ScheduleModal";
+import DeleteCandidateModal from "./DeleteCandidateModal";
 import NewCandidateDetail from "./AddNewCandidate/NewCandidateDetail";
 import FilterPaneBar from "../FilterPane/FilterPane";
 import { useDispatch } from "react-redux";
@@ -28,6 +29,7 @@ const RefreshPage = () => {
 
 function CandidateGrid() {
   const [content, setContent] = React.useState(rdata);
+  const [selectedRows, setSelectedRows]: any = React.useState([]);
 
   //By default disabling 'delete' and 'Schedule' button if no rows are selected
   const [buttonStatus, setButtonStatus] = React.useState(true);
@@ -39,6 +41,8 @@ function CandidateGrid() {
         "selectedRows: ",
         selectedRows
       );
+
+      setSelectedRows(selectedRows)
       let condition;
       if (selectedRows.length === 0) {
         condition = true;
@@ -50,8 +54,14 @@ function CandidateGrid() {
   };
 
   const [open, setOpen] = React.useState(false);
+  const [openDeleteModal, setOpenDeleteModal] = React.useState(false);
+
   const showModal = () => {
     setOpen(true);
+  };
+  const showDeleteModal = () => {
+    setOpenDeleteModal(true);
+    console.log(openDeleteModal);
   };
 
   //Show Add Single Candidate Modal
@@ -258,7 +268,7 @@ function CandidateGrid() {
       <Space
         wrap
         style={{
-          display: "flex",
+          // display: "flex",
           marginTop: 10,
           marginLeft: "20px",
           justifyContent: "right",
@@ -290,11 +300,17 @@ function CandidateGrid() {
             alignItems: "center",
             boxShadow: "none",
           }}
+          onClick={showDeleteModal}
           title="Delete"
         >
           Delete
         </Button>
-
+        <DeleteCandidateModal
+          setContent={setContent}
+          selectedRow={selectedRows}
+          visible={openDeleteModal}
+          setOpen={setOpenDeleteModal}
+        />
         <Button
           icon={<CalendarFilled style={{ color: "orange" }} />}
           className="button"
@@ -375,7 +391,7 @@ function CandidateGrid() {
       </Space>
       <div className="filterPane">{filterPane}</div>
       <Divider style={{ marginTop: 10, marginBottom: 10, width: "100%" }} />
-      <div className="tableDiv">
+      <div className="candidate-table">
         <Table
           scroll={{ x: true }}
           pagination={{

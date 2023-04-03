@@ -1,0 +1,83 @@
+.interview {
+  background: #ffffff 0% 0% no-repeat;
+  /* box-shadow: 2px 3px 6px #F3F6F9; */
+  height: 84px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  text-indent: 27px;
+  font: normal normal 600 25px/33px Segoe UI;
+  color: #1C212D;
+  opacity: 1;
+  
+}
+
+.Interview-header {
+  background-color: #f3f6f9;
+  height: 70px;
+  font-size: 30px;
+  text-indent: 27px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0px;color: #1C212D;
+  opacity: 1;
+}
+
+.interviewFilterPane {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  font-style: #474D5B;
+}
+
+.interview-table{
+  border: 27px solid #F3F6F9;
+
+}
+.interview-table .ant-table-content {
+  border: 20px;
+  border-color: #F3F6F9;
+  margin: 0px 0px 0px 0px;
+  
+}
+
+.interview-table .ant-table-container {
+  border: 20px;
+  border-color: #F3F6F9;
+}
+
+.interview-table .ant-table-thead .ant-table-cell {
+  background: #f8f8f8;
+  height: 71px;
+  text-align: left;
+  font: normal normal 600 18px/16px Segoe UI;
+  letter-spacing: 0.49px;
+  color: #1A3937;
+  opacity: 1;
+}
+
+.interview-table .ant-table-tbody .ant-table-cell {
+  height: 71px;
+  background: white;
+ 
+  text-align: left;
+  font: normal normal normal 18px/16px Segoe UI;
+  letter-spacing: 0.49px;
+  color: #000000;
+  opacity: 1;
+}
+
+
+
+.searchbox{
+  height: 40px;
+  width: 261px;
+  border-radius: 0%;
+  border-color: #E5E5E5;
+  background-color: #FAFAFA;
+}
+
+.round1-top{
+  display: flex;
+  font-size: 18px;
+}
