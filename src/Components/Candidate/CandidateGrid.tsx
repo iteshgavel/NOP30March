@@ -2,7 +2,6 @@ import React from "react";
 import { Divider, Space, Table, Button, Upload, Modal } from "antd";
 import { CSVLink } from "react-csv";
 import csvtojson from "csvtojson";
-import "./Grid.css";
 import { rdata, rDataType } from "./DummyCandidateData";
 import { Link } from "react-router-dom";
 
@@ -22,6 +21,7 @@ import DeleteCandidateModal from "./DeleteCandidateModal";
 import NewCandidateDetail from "./AddNewCandidate/NewCandidateDetail";
 import FilterPaneBar from "../FilterPane/FilterPane";
 import { useDispatch } from "react-redux";
+import "./CandidateGrid.css";
 //defining datatype of the data
 const RefreshPage = () => {
   window.location.reload();
@@ -42,7 +42,7 @@ function CandidateGrid() {
         selectedRows
       );
 
-      setSelectedRows(selectedRows)
+      setSelectedRows(selectedRows);
       let condition;
       if (selectedRows.length === 0) {
         condition = true;
@@ -80,7 +80,6 @@ function CandidateGrid() {
     setIsAddCandidateModalOpen(false);
   };
 
-  const [searchedText, setSearchedText] = React.useState("");
   const dispatch = useDispatch();
   const columns: ColumnsType<rDataType> = [
     {
@@ -99,7 +98,6 @@ function CandidateGrid() {
         };
       },
       render: (text: any) => <Link to="/candidate/name">{text}</Link>,
-      filteredValue: [searchedText],
       onFilter: (value: any, record: rDataType) => {
         return String(record.Name).toLowerCase().includes(value.toLowerCase());
       },
@@ -240,7 +238,6 @@ function CandidateGrid() {
     <>
       <Divider style={{ marginTop: "10px", marginBottom: "10px" }} />
       <FilterPaneBar
-        setSearchedText={setSearchedText}
         setContent={setContent}
       />
     </>
@@ -268,7 +265,6 @@ function CandidateGrid() {
       <Space
         wrap
         style={{
-          // display: "flex",
           marginTop: 10,
           marginLeft: "20px",
           justifyContent: "right",

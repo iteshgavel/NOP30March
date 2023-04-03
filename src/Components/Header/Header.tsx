@@ -101,7 +101,6 @@ export default function HeaderApp() {
             </div>
           </div>
         </Header>
-        <Divider style={{ margin: 0, padding: 0 }} />
       </Layout>
     </>
   );

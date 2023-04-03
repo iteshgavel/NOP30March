@@ -3,7 +3,7 @@ import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import { message, Upload } from "antd";
 import type { UploadChangeParam } from "antd/es/upload";
 import type { RcFile, UploadFile, UploadProps } from "antd/es/upload/interface";
-import "./Image.css";
+import "./CandidateImage.css";
 import ImgCrop from "antd-img-crop";
 
 const getBase64 = (img: RcFile, callback: (url: string) => void) => {

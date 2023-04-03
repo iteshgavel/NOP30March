@@ -299,18 +299,16 @@ const onChange: TableProps<DataType>["onChange"] = (
 };
 
 const HireSummary = () => {
-  const [searchedText, setSearchedText] = useState();
   const [content, setContent] = useState();
 
   return (
     <>
       <div className="totalCandidate">{`${data.length} Candidates`}</div>
       <div>
-        <FilterPane setSearchedText={setSearchedText} setContent={setContent} />
+        <FilterPane setContent={setContent} />
       </div>
       <div className="hireSummaryTable">
         <Table
-          scroll={{ x: true }}
           pagination={{ pageSize: 12 }}
           columns={columns}
           dataSource={data}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Round1 from './Round1'
+import Round1 from './Round1/Round1'
 import { Image } from 'antd';
 import { Button } from 'antd';
 import {

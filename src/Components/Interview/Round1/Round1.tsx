@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Interview/Interview.css';
+import './Round1.css';
 
 function Round1() {
   return (

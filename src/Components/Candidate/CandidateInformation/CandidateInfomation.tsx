@@ -9,8 +9,8 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { AiFillBook } from "react-icons/ai";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
-import ProfileImage from "../CandidateImage/Image";
-import "../CandidateImage/Image";
+import ProfileImage from "../CandidateImage/CandidateImage";
+import "../CandidateImage/CandidateImage";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 interface DataType {
