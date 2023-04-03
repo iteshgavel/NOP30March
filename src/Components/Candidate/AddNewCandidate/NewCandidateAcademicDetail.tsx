@@ -13,39 +13,75 @@ const validateMessages = {
 };
 
 const Academic = (props: any) => {
-  const [ssc, setSsc] = useState(props.candidateSsc);
-  const [hsc, setHsc] = useState(props.candidateHsc);
+  // const [ssc, setSsc] = useState(props.candidateSsc);
+  // const [hsc, setHsc] = useState(props.candidateHsc);
+  // const [diplomaBranch, setDiplomaBranch] = useState(
+  //   props.candidateDiplomaBranch
+  // );
+  // const [diplomaScore, setDiplomaScore] = useState(props.candidateDiplomaScore);
+  // const [ugCollege, setUgCollege] = useState(props.candidateUgCollege);
+  // const [ugCourse, setUgCourse] = useState(props.candidateUgCourse);
+  // const [ugBranch, setUgBranch] = useState(props.candidateUgBranch);
+  // const [ugRollNo, setUgRollNo] = useState(props.candidateUgRollNo);
+  // const [ugBacklog, setUgBacklog] = useState(props.candidateUgBacklog);
+  // const [ugRank, setUgRank] = useState(props.candidateUgRank);
+  // const [ugScore, setUgScore] = useState(props.candidateUgScore);
+  // const [pgCourse, setPgCourse] = useState(props.candidatePgCourse);
+  // const [pgBranch, setPgBranch] = useState(props.candidatePgBranch);
+  // const [pgScore, setPgScore] = useState(props.candidatePgScore);
+  const [ssc, setSsc] = useState(props.academic.ssc.score);
+  const [hsc, setHsc] = useState(props.academic.hsc.score);
   const [diplomaBranch, setDiplomaBranch] = useState(
-    props.candidateDiplomaBranch
+    props.academic.diploma.branch
   );
-  const [diplomaScore, setDiplomaScore] = useState(props.candidateDiplomaScore);
-  const [ugCollege, setUgCollege] = useState(props.candidateUgCollege);
-  const [ugCourse, setUgCourse] = useState(props.candidateUgCourse);
-  const [ugBranch, setUgBranch] = useState(props.candidateUgBranch);
-  const [ugRollNo, setUgRollNo] = useState(props.candidateUgRollNo);
-  const [ugBacklog, setUgBacklog] = useState(props.candidateUgBacklog);
-  const [ugRank, setUgRank] = useState(props.candidateUgRank);
-  const [ugScore, setUgScore] = useState(props.candidateUgScore);
-  const [pgCourse, setPgCourse] = useState(props.candidatePgCourse);
-  const [pgBranch, setPgBranch] = useState(props.candidatePgBranch);
-  const [pgScore, setPgScore] = useState(props.candidatePgScore);
+  const [diplomaScore, setDiplomaScore] = useState(props.academic.diploma.score);
+  const [ugCollege, setUgCollege] = useState(props.academic.ug.college);
+  const [ugCourse, setUgCourse] = useState(props.academic.ug.course);
+  const [ugBranch, setUgBranch] = useState(props.academic.ug.branch);
+  const [ugRollNo, setUgRollNo] = useState(props.academic.ug.rollNo);
+  const [ugBacklog, setUgBacklog] = useState(props.academic.ug.backlog);
+  const [ugRank, setUgRank] = useState(props.academic.ug.rank);
+  const [ugScore, setUgScore] = useState(props.academic.ug.score);
+  const [pgCourse, setPgCourse] = useState(props.academic.pg.course);
+  const [pgBranch, setPgBranch] = useState(props.academic.pg.branch);
+  const [pgScore, setPgScore] = useState(props.academic.pg.score);
+
 
   const onFinish = (values: any) => {
     console.log({ values });
-    props.setCandidateSsc(ssc);
-    props.setCandidateHsc(hsc);
-    props.setCandidateDiplomaBranch(diplomaBranch);
-    props.setCandidateDiplomaScore(diplomaScore);
-    props.setCandidateUgCollege(ugCollege);
-    props.setCandidateUgCourse(ugCourse);
-    props.setCandidateUgBranch(ugBranch);
-    props.setCandidateUgRollNo(ugRollNo);
-    props.setCandidateUgBacklog(ugBacklog);
-    props.setCandidateUgRank(ugRank);
-    props.setCandidateUgScore(ugScore);
-    props.setCandidatePgCourse(pgCourse);
-    props.setCandidatePgBranch(pgBranch);
-    props.setCandidatePgScore(pgScore);
+    // props.setCandidateSsc(ssc);
+    // props.setCandidateHsc(hsc);
+    // props.setCandidateDiplomaBranch(diplomaBranch);
+    // props.setCandidateDiplomaScore(diplomaScore);
+    // props.setCandidateUgCollege(ugCollege);
+    // props.setCandidateUgCourse(ugCourse);
+    // props.setCandidateUgBranch(ugBranch);
+    // props.setCandidateUgRollNo(ugRollNo);
+    // props.setCandidateUgBacklog(ugBacklog);
+    // props.setCandidateUgRank(ugRank);
+    // props.setCandidateUgScore(ugScore);
+    // props.setCandidatePgCourse(pgCourse);
+    // props.setCandidatePgBranch(pgBranch);
+    // props.setCandidatePgScore(pgScore);
+    props.setAcademic({
+      ssc: { score: ssc },
+      hsc: { score: hsc },
+      diploma: { branch: diplomaBranch, score: diplomaScore },
+      ug: {
+        college: ugCollege,
+        course: ugCourse,
+        branch: ugBranch,
+        rollNo: ugRollNo,
+        backlog: ugBacklog,
+        rank: ugRank,
+        score: ugScore,
+      },
+      pg: {
+        course: pgCourse,
+        branch: pgBranch,
+        score: pgScore
+      }
+    })
     props.callAcademicNext();
   };
 
