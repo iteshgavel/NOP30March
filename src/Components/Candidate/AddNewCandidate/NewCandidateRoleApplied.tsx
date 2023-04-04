@@ -7,7 +7,6 @@ const validateMessages = {
 };
 
 const AppliedFor = (props: any) => {
-  // const [applyingFor, setApplyingFor] = useState(props.candidateApplyingFor);
   const [applyingFor, setApplyingFor] = useState(props.applyingFor.applyingFor);
 
   const handleChange = (value: { value: string; label: React.ReactNode }) => {
@@ -16,7 +15,6 @@ const AppliedFor = (props: any) => {
 
   const onFinish = (values: any) => {
     message.success("Candidate Added Successfully.");
-    //props.setCandidateApplyingFor(applyingFor);
     props.setApplyingFor({applyingFor:applyingFor});
     props.modalOnOk();
     props.setCurrent(0);

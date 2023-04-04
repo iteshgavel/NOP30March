@@ -13,22 +13,6 @@ const validateMessages = {
 };
 
 const Academic = (props: any) => {
-  // const [ssc, setSsc] = useState(props.candidateSsc);
-  // const [hsc, setHsc] = useState(props.candidateHsc);
-  // const [diplomaBranch, setDiplomaBranch] = useState(
-  //   props.candidateDiplomaBranch
-  // );
-  // const [diplomaScore, setDiplomaScore] = useState(props.candidateDiplomaScore);
-  // const [ugCollege, setUgCollege] = useState(props.candidateUgCollege);
-  // const [ugCourse, setUgCourse] = useState(props.candidateUgCourse);
-  // const [ugBranch, setUgBranch] = useState(props.candidateUgBranch);
-  // const [ugRollNo, setUgRollNo] = useState(props.candidateUgRollNo);
-  // const [ugBacklog, setUgBacklog] = useState(props.candidateUgBacklog);
-  // const [ugRank, setUgRank] = useState(props.candidateUgRank);
-  // const [ugScore, setUgScore] = useState(props.candidateUgScore);
-  // const [pgCourse, setPgCourse] = useState(props.candidatePgCourse);
-  // const [pgBranch, setPgBranch] = useState(props.candidatePgBranch);
-  // const [pgScore, setPgScore] = useState(props.candidatePgScore);
   const [ssc, setSsc] = useState(props.academic.ssc.score);
   const [hsc, setHsc] = useState(props.academic.hsc.score);
   const [diplomaBranch, setDiplomaBranch] = useState(
@@ -49,20 +33,6 @@ const Academic = (props: any) => {
 
   const onFinish = (values: any) => {
     console.log({ values });
-    // props.setCandidateSsc(ssc);
-    // props.setCandidateHsc(hsc);
-    // props.setCandidateDiplomaBranch(diplomaBranch);
-    // props.setCandidateDiplomaScore(diplomaScore);
-    // props.setCandidateUgCollege(ugCollege);
-    // props.setCandidateUgCourse(ugCourse);
-    // props.setCandidateUgBranch(ugBranch);
-    // props.setCandidateUgRollNo(ugRollNo);
-    // props.setCandidateUgBacklog(ugBacklog);
-    // props.setCandidateUgRank(ugRank);
-    // props.setCandidateUgScore(ugScore);
-    // props.setCandidatePgCourse(pgCourse);
-    // props.setCandidatePgBranch(pgBranch);
-    // props.setCandidatePgScore(pgScore);
     props.setAcademic({
       ssc: { score: ssc },
       hsc: { score: hsc },

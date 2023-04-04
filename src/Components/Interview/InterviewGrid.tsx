@@ -13,7 +13,7 @@ function InterviewGrid(props: any) {
     {
       title: "Name",
       dataIndex: "Name",
-      width: 300,
+      //width: 300,
       key: "Name",
     },
 
@@ -21,31 +21,31 @@ function InterviewGrid(props: any) {
       title: "Position",
       dataIndex: "Position",
       key: "Position",
-      width: 370,
+      //width: 370,
     },
     {
       title: "Date",
       dataIndex: "Date",
       key: "Date",
-      width: 270,
+      //width: 270,
     },
     {
       title: "Time",
       dataIndex: "Time",
       key: "Time",
-      width: 220,
+      //width: 220,
     },
     {
       title: "Status",
       dataIndex: "status",
       key: "Status",
-      width: 270,
+      //width: 270,
     },
     {
       title: "Start",
       dataIndex: "Start",
       key: "Start%",
-      width: 240,
+      //width: 240,
       render: (text: any) => <Link to="/Interview/Info">{text}</Link>,
     },
   ];

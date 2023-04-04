@@ -309,7 +309,7 @@ const HireSummary = () => {
       </div>
       <div className="hireSummaryTable">
         <Table
-          pagination={{ pageSize: 12 }}
+          pagination={{ pageSize: 11}}
           columns={columns}
           dataSource={data}
           onChange={onChange}

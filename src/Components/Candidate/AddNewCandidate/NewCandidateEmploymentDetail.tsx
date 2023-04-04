@@ -25,11 +25,7 @@ const App = (props: any) => {
   const [endDate, setEndDate] = useState(props.employment.endDate);
 
   const onFinish = (values: any) => {
-    console.log(values);
-    // props.setCandidateEmployer(company);
-    // props.setCandidateDesignation(position);
-    // props.setCandidateStartDate(startDate);
-    // props.setCandidateEndDate(endDate);
+    console.log(values); 
     props.setEmployment({employer: company, designation: position, startDate: startDate, endDate: endDate});
     props.callEmploymentNext();
   };

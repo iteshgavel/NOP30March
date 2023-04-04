@@ -237,9 +237,7 @@ function CandidateGrid() {
   const filterPane = filter ? (
     <>
       <Divider style={{ marginTop: "10px", marginBottom: "10px" }} />
-      <FilterPaneBar
-        setContent={setContent}
-      />
+      <FilterPaneBar setContent={setContent} />
     </>
   ) : (
     <></>
@@ -352,9 +350,11 @@ function CandidateGrid() {
         >
           Refresh
         </Button>
-        <Button icon={<PlusOutlined />} onClick={addCandidateShowModal}>
-          Add Candidate
-        </Button>
+        <Link to="/Candidate/AddCandidate">
+          <Button icon={<PlusOutlined />} onClick={addCandidateShowModal}>
+            Add Candidate
+          </Button>
+        </Link>
 
         <Modal
           title="Add Candidate Detail"

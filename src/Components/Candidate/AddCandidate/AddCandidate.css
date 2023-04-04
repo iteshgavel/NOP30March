@@ -1,0 +1,25 @@
+.formBody {
+ padding: 10px;
+ background-color: #f3f6f9;
+}
+
+.educationDetail {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.workExperienceDetail {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.row {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.AddIcon {
+    font-size: 30px;
+}
