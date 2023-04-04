@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.css";
+import { Divider } from "antd";
+
 import Nav from "./Components/LeftNavigation/LeftNavigation";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
@@ -10,7 +11,7 @@ import Header from "./Components/Header/Header";
 import { RemoveScrollBar } from "react-remove-scroll-bar";
 import CandidateInfo from "./Components/Candidate/CandidateInformation/CandidateInfomation";
 import InterviewInfo from "./Components/Interview/InterviewInfo";
-import HireSummary from "./Components/HireSummary/HireSummary";
+import "./App.css";
 
 function App() {
   const [collapsed, setCollapsed] = React.useState(false);
@@ -19,9 +20,10 @@ function App() {
       <BrowserRouter>
         <div className="App">
           <Header />
+          <Divider style={{margin: 0}}/>
           <div className="main">
             <Nav collapsed={collapsed} setCollapsed={setCollapsed} />
-            <div className="content" style={{width: "100%"}}>
+            <div className="content" style={{ width: "100%" }}>
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Home" element={<Home />} />
@@ -37,7 +39,7 @@ function App() {
                 <Route path="/interview" element={<Interview />} />
                 <Route path="/summary" element={<Summary />} />
                 <Route path="/candidate/Name" element={<CandidateInfo />} />
-                <Route path="/Interview/Info" element={<InterviewInfo/>}/>
+                <Route path="/Interview/Info" element={<InterviewInfo />} />
               </Routes>
             </div>
           </div>
