@@ -1,6 +1,5 @@
 import React from "react";
-import { Divider, Space, Table, Button, Upload, Modal } from "antd";
-import { Link } from "react-router-dom";
+import { Table } from "antd";
 import { idata, iDataType } from "./DummyInterviewData";
 import FilterPane from "../FilterPane/FilterPane";
 
@@ -20,7 +19,6 @@ function InterviewGrid(props: InterviewGridPropType) {
   const columns: ColumnsType<iDataType> = [
     {
       title: "Name",
-
       dataIndex: "Name",
       width: 300,
       key: "Name",

@@ -8,6 +8,7 @@ import MoreEllipses from "../MoreEllipses/MoreEllipses";
 
 interface DataType {
   key: React.Key;
+  Name: string;
   candidateName: any;
   positon: string;
   offered: string;
@@ -16,41 +17,12 @@ interface DataType {
   finalFeedback: any;
 }
 
-const columns: ColumnsType<DataType> = [
-  {
-    title: "Candidate Name",
-    dataIndex: "candidateName",
-    sorter: (a, b) => a.candidateName.length - b.candidateName.length,
-  },
 
-  {
-    title: "Position",
-    dataIndex: "positon",
-    sorter: (a, b) => a.positon.length - b.positon.length,
-  },
-  {
-    title: "Offered",
-    dataIndex: "offered",
-    sorter: (a, b) => a.offered.length - b.offered.length,
-  },
-  {
-    title: "Offer Type",
-    dataIndex: "offerType",
-    sorter: (a, b) => a.offerType.length - b.offerType.length,
-  },
-  {
-    title: "Panel/Feedback",
-    dataIndex: "panelFeedback",
-  },
-  {
-    title: "Final Feedback",
-    dataIndex: "finalFeedback",
-  },
-];
 
 const data: DataType[] = [
   {
     key: "1",
+    Name: "Rahul Singh",
     candidateName: (
       <Space>
         <Avatar src={"https://picsum.photos/200"} /> Rahul Singh
@@ -81,6 +53,7 @@ const data: DataType[] = [
   },
   {
     key: "2",
+    Name: "Awdhesh Gupta",
     candidateName: (
       <Space>
         <Avatar src={"https://picsum.photos/200"} />
@@ -112,6 +85,7 @@ const data: DataType[] = [
   },
   {
     key: "3",
+    Name: "Awdhesh Gupta",
     candidateName: (
       <Space>
         <Avatar src={"https://picsum.photos/200"} />
@@ -143,6 +117,7 @@ const data: DataType[] = [
   },
   {
     key: "4",
+    Name: "Awdhesh Gupta",
     candidateName: (
       <Space>
         <Avatar src={"https://picsum.photos/200"} />
@@ -174,6 +149,7 @@ const data: DataType[] = [
   },
   {
     key: "5",
+    Name: "Awdhesh Gupta",
     candidateName: (
       <Space>
         <Avatar src={"https://picsum.photos/200"} />
@@ -205,6 +181,7 @@ const data: DataType[] = [
   },
   {
     key: "6",
+    Name: "Awdhesh Gupta",
     candidateName: (
       <Space>
         <Avatar src={"https://picsum.photos/200"} />
@@ -236,6 +213,7 @@ const data: DataType[] = [
   },
   {
     key: "7",
+    Name: "Awdhesh Gupta",
     candidateName: (
       <Space>
         <Avatar src={"https://picsum.photos/200"} />
@@ -267,6 +245,7 @@ const data: DataType[] = [
   },
   {
     key: "8",
+    Name: "Awdhesh Gupta",
     candidateName: (
       <Space>
         <Avatar src={"https://picsum.photos/200"} />
@@ -298,6 +277,7 @@ const data: DataType[] = [
   },
   {
     key: "9",
+    Name: "Awdhesh Gupta",
     candidateName: (
       <Space>
         <Avatar src={"https://picsum.photos/200"} />
@@ -329,6 +309,7 @@ const data: DataType[] = [
   },
   {
     key: "10",
+    Name: "Awdhesh Gupta",
     candidateName: (
       <Space>
         <Avatar src={"https://picsum.photos/200"} />
@@ -360,6 +341,7 @@ const data: DataType[] = [
   },
   {
     key: "11",
+    Name: "Rahul Mehta",
     candidateName: (
       <Space>
         <Avatar src={"https://picsum.photos/200"} />
@@ -391,6 +373,7 @@ const data: DataType[] = [
   },
   {
     key: "12",
+    Name: "Rahul Sinha",
     candidateName: (
       <Space>
         <Avatar src={"https://picsum.photos/200"} />
@@ -435,12 +418,51 @@ const HireSummary = () => {
   const [content, setContent] = useState();
   const [searchedText, setSearchedText] = React.useState("");
 
+  const columns: ColumnsType<DataType> = [
+    {
+      title: "Candidate Name",
+      dataIndex: "candidateName",
+      filteredValue: [searchedText],
+      sorter: (a, b) => a.Name.length - b.Name.length,
+      onFilter: (value: any, record: any) => {
+        return String(record.Name).toLowerCase().includes(value.toLowerCase());
+      },
+    },
+  
+    {
+      title: "Position",
+      dataIndex: "positon",
+      sorter: (a, b) => a.positon.length - b.positon.length,
+    },
+    {
+      title: "Offered",
+      dataIndex: "offered",
+      sorter: (a, b) => a.offered.length - b.offered.length,
+    },
+    {
+      title: "Offer Type",
+      dataIndex: "offerType",
+      sorter: (a, b) => a.offerType.length - b.offerType.length,
+    },
+    {
+      title: "Panel/Feedback",
+      dataIndex: "panelFeedback",
+    },
+    {
+      title: "Final Feedback",
+      dataIndex: "finalFeedback",
+    },
+  ];
+
   return (
     <>
       <div className="hireSummaryBody">
         <div className="totalCandidate">{`${data.length} Candidates`}</div>
         <div className="HireSymmaryfilterPane">
-          <FilterPane setSearchedText={setSearchedText} setContent={setContent} />
+          <FilterPane
+            setSearchedText={setSearchedText}
+            setContent={setContent}
+          />
         </div>
         <div className="hireSummaryTable">
           <Table
