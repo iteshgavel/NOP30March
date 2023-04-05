@@ -64,7 +64,11 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate character={<PlusSquareFilled />} style={{ color: "#FF9736" }} />
+      <Rate
+        character={<PlusSquareFilled />}
+        style={{ color: "#FF9736" }}
+        defaultValue={3}
+      />
     ),
   },
   {
@@ -84,7 +88,11 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate character={<PlusSquareFilled />} style={{ color: "#FF9736" }} />
+      <Rate
+        character={<PlusSquareFilled />}
+        style={{ color: "#FF9736" }}
+        defaultValue={4}
+      />
     ),
   },
   {
@@ -104,7 +112,11 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate character={<PlusSquareFilled />} style={{ color: "#FF9736" }} />
+      <Rate
+        character={<PlusSquareFilled />}
+        style={{ color: "#FF9736" }}
+        defaultValue={3}
+      />
     ),
   },
   {
@@ -124,7 +136,11 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate character={<PlusSquareFilled />} style={{ color: "#FF9736" }} />
+      <Rate
+        character={<PlusSquareFilled />}
+        style={{ color: "#FF9736" }}
+        defaultValue={3}
+      />
     ),
   },
   {
@@ -144,7 +160,11 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate character={<PlusSquareFilled />} style={{ color: "#FF9736" }} />
+      <Rate
+        character={<PlusSquareFilled />}
+        style={{ color: "#FF9736" }}
+        defaultValue={2}
+      />
     ),
   },
   {
@@ -164,7 +184,11 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate character={<PlusSquareFilled />} style={{ color: "#FF9736" }} />
+      <Rate
+        character={<PlusSquareFilled />}
+        style={{ color: "#FF9736" }}
+        defaultValue={5}
+      />
     ),
   },
   {
@@ -184,7 +208,11 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate character={<PlusSquareFilled />} style={{ color: "#FF9736" }} />
+      <Rate
+        character={<PlusSquareFilled />}
+        style={{ color: "#FF9736" }}
+        defaultValue={2}
+      />
     ),
   },
   {
@@ -204,7 +232,11 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate character={<PlusSquareFilled />} style={{ color: "#FF9736" }} />
+      <Rate
+        character={<PlusSquareFilled />}
+        style={{ color: "#FF9736" }}
+        defaultValue={2}
+      />
     ),
   },
   {
@@ -224,7 +256,11 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate character={<PlusSquareFilled />} style={{ color: "#FF9736" }} />
+      <Rate
+        character={<PlusSquareFilled />}
+        style={{ color: "#FF9736" }}
+        defaultValue={3}
+      />
     ),
   },
   {
@@ -244,7 +280,11 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate character={<PlusSquareFilled />} style={{ color: "#FF9736" }} />
+      <Rate
+        character={<PlusSquareFilled />}
+        style={{ color: "#FF9736" }}
+        defaultValue={3}
+      />
     ),
   },
   {
@@ -264,7 +304,11 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate character={<PlusSquareFilled />} style={{ color: "#FF9736" }} />
+      <Rate
+        character={<PlusSquareFilled />}
+        style={{ color: "#FF9736" }}
+        defaultValue={5}
+      />
     ),
   },
   {
@@ -284,7 +328,11 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate character={<PlusSquareFilled />} style={{ color: "#FF9736" }} />
+      <Rate
+        character={<PlusSquareFilled />}
+        style={{ color: "#FF9736" }}
+        defaultValue={3}
+      />
     ),
   },
 ];
@@ -303,18 +351,20 @@ const HireSummary = () => {
 
   return (
     <>
-      <div className="totalCandidate">{`${data.length} Candidates`}</div>
-      <div>
-        <FilterPane setContent={setContent} />
-      </div>
-      <div className="hireSummaryTable">
-        <Table
-          pagination={{ pageSize: 11}}
-          columns={columns}
-          dataSource={data}
-          onChange={onChange}
-          bordered
-        />
+      <div className="hireSummaryBody">
+        <div className="totalCandidate">{`${data.length} Candidates`}</div>
+        <div className="HireSymmaryfilterPane">
+          <FilterPane setContent={setContent} />
+        </div>
+        <div className="hireSummaryTable">
+          <Table
+            pagination={{ pageSize: 10 }}
+            columns={columns}
+            dataSource={data}
+            onChange={onChange}
+            bordered
+          />
+        </div>
       </div>
     </>
   );

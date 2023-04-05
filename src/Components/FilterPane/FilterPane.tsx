@@ -9,10 +9,9 @@ import {
   Button,
   Select,
 } from "antd";
-
-import { CaretDownOutlined, RedoOutlined, SearchOutlined } from "@ant-design/icons";
+import { CaretDownOutlined, RedoOutlined } from "@ant-design/icons";
 import { rdata, rDataType } from "../Candidate/DummyCandidateData";
-
+import { SearchOutlined } from "@ant-design/icons";
 const { Option } = Select;
 
 //Dinamically getting all college names from table.
@@ -88,7 +87,7 @@ const FilterPanBar = (props: any) => {
       number: 0,
     },
   });
-
+   
   //defining actions for Filter dropdown
   const [openCollegeFilter, setOpenCollegeFilter] = useState(false);
   const [openAppliedFilter, setOpenAppliedFilter] = useState(false);
@@ -221,6 +220,7 @@ const FilterPanBar = (props: any) => {
 
   const selectHSC = (
     <Select
+    
       menuItemSelectedIcon
       size="small"
       defaultValue="gte"
@@ -241,6 +241,7 @@ const FilterPanBar = (props: any) => {
 
   const selectUG = (
     <Select
+    
       menuItemSelectedIcon
       size="small"
       defaultValue="gte"
@@ -261,6 +262,7 @@ const FilterPanBar = (props: any) => {
 
   const selectPG = (
     <Select
+    
       menuItemSelectedIcon
       size="small"
       defaultValue="gte"
@@ -554,24 +556,21 @@ const FilterPanBar = (props: any) => {
 
   return (
     <div
-      className="filterBody"
+    className="filterPane"
       style={{
         width: "100%",
         display: "flex",
         justifyContent: "start",
-        alignItems: "center",
-        paddingTop: "10px",
-        paddingBottom: "10px",
+        alignItems: "center",        
       }}
     >
-      <div className="search">
+      <div className="searchName">
         <Input
-        prefix={<SearchOutlined />}
-        className="searchbox"
-          style={{marginLeft: "12px"}}
-          placeholder="Search By Name"
+          style={{ marginLeft: "27px" }}
+          placeholder=" Search By Name"
           value={props.searchedText}
           onChange={(e) => props.setSearchedText(e.target.value)}
+          prefix={<SearchOutlined />}
         />
       </div>
 

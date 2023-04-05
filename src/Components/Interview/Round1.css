@@ -1,0 +1,179 @@
+
+.round1-top {
+  font-size: 18px;
+}
+
+.round1-top .ant-tabs-nav {
+  margin-left: 10px;
+}
+
+.programmingConcept {
+  margin-left: 10px;
+  font: normal normal 600 16px/16px Segoe UI;
+  letter-spacing: 0.43px;
+  color: #000000;
+  opacity: 1;
+}
+
+.concept {
+  height: 80px;
+  background: #F3F6F9 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+  opacity: 1;
+  margin: 10px;
+  align-items: center;
+  display: flex;
+  text-indent: 10px;
+  position: relative;
+  font: normal normal 600 16px/16px Segoe UI;
+  letter-spacing: 0.43px;
+  color: #000000;
+  opacity: 1;
+  box-shadow: -5px 0px 0px #356966;
+
+}
+
+.comment {
+  height: 65px;
+  width: 978px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  display: flex;
+  color: #717171;
+  align-items: center;
+}
+
+.save-btn {
+  background: #356966 0% 0% no-repeat padding-box;
+  border: 1px solid #356966;
+  border-radius: 10px;
+  opacity: 1;
+  height: 49px;
+  width: 104px;
+  color: white;
+  font-size: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
+  float: right;
+}
+
+.save-next-btn {
+  background: #356966 0% 0% no-repeat padding-box;
+  border: 1px solid #356966;
+  border-radius: 10px;
+  opacity: 1;
+  height: 49px;
+  width: 181px;
+  color: white;
+  font-size: 18px;
+  margin-left: 10px;
+  float: right;
+}
+
+.feedback {
+  height: 80px;
+  background: #F3F6F9 0% 0% no-repeat padding-box;
+  border-radius: 10px;
+  opacity: 1;
+  margin: 10px;
+  align-items: center;
+  display: flex;
+  text-indent: 10px;
+  position: relative;
+  font: normal normal 600 16px/16px Segoe UI;
+  letter-spacing: 0.43px;
+  color: #717171;
+  opacity: 1;
+}
+
+.arrowActive{
+  width: 170px; height: 50px; background: #FF9533; position: relative;
+  margin-left: 35px;
+  margin-right: 35px;
+  color: white;
+  line-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.arrowActive:before { 
+  content: ""; 
+  position: absolute; 
+  top: 0; 
+  left: -35px;
+  width: 0; 
+  height: 0; 
+  border-top: 25px solid #FF9533; 
+  border-bottom: 25px solid #FF9533; 
+  border-left: 35px solid transparent;
+
+}
+
+.arrowActive:after { 
+  content: ""; 
+  position: absolute; 
+  left: 170px; 
+  bottom: 0; 
+  width: 0; 
+  height: 0; 
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 45px solid #FF9533;
+}
+
+
+.arrow { 
+  width: 170px; height: 50px; background: #E6ECF3; position: relative;
+  margin-left: 35px;
+  margin-right: 35px;
+  color: #000000;
+  line-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.arrow:before { 
+  content: ""; 
+  position: absolute; 
+  top: 0; 
+  left: -35px;
+  width: 0; 
+  height: 0; 
+  border-top: 25px solid #E6ECF3; 
+  border-bottom: 25px solid #E6ECF3; 
+  border-left: 35px solid transparent;
+
+}
+
+.arrow:after { 
+  content: ""; 
+  position: absolute; 
+  left: 170px; 
+  bottom: 0; 
+  width: 0; 
+  height: 0; 
+  border-top: 25px solid transparent;
+
+  border-bottom: 25px solid transparent;
+
+  border-left: 45px solid #E6ECF3;
+}
+
+.round1-top{
+  display: flex;
+  margin-left: 10px;
+}
+
+.interviewpageIcon{
+  font-size: 20px;
+}

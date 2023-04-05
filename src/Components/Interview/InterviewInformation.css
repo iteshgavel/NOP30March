@@ -1,7 +1,7 @@
-.information {
+.interviewInformation {
     display: flex;
     height: 200px;
-    width: 90vw;
+    width: 100%;
     background-color: #F3F6F9;
     align-items: center;
     position: relative;
@@ -10,7 +10,8 @@
 
 .interview {
     background: #ffffff 0% 0% no-repeat;
-    height: 84px;
+    height: 60px;
+    width: 100%;
     font-size: 25px;
     display: flex;
     align-items: center;
@@ -20,14 +21,14 @@
     opacity: 1;
 }
 
-.name {
+.personalInformation .name {
     font: normal normal 600 25px/33px Segoe UI;
     letter-spacing: 0px;
     color: #1C212D;
     opacity: 1;
 }
 
-.email {
+.personalInformation .email {
     text-align: left;
     font: normal normal normal 20px/27px Segoe UI;
     letter-spacing: 0px;
@@ -35,14 +36,14 @@
     opacity: 1;
 }
 
-.designation {
+.personalInformation .designation {
     font: normal normal normal 20px/27px Segoe UI;
     letter-spacing: 0px;
     color: #6D6D6D;
     opacity: 1;
 }
 
-.time {
+.personalInformation .time {
     font: normal normal 600 20px/27px Segoe UI;
     letter-spacing: 0px;
     color: #6D6D6D;
@@ -53,20 +54,18 @@
     margin-left: 42px;
 }
 
-.profileImg{
+.profileImg {
     margin-left: 27px;
 }
 
-
-
-.interview-btn {
+.interviewBtn {
     position: absolute;
     top: 0;
     right: 0;
-
+    display: flex;
 }
 
-.send-msg-btn {
+.sendMsgBtn {
     width: 203px;
     height: 50px;
     border: 1px solid #356966;
@@ -77,7 +76,7 @@
     margin: 18px 10px;
 }
 
-.send-email-btn {
+.interviewBtn .sendEmailBtn {
     width: 203px;
     height: 50px;
     border: 1px solid #356966;
@@ -88,36 +87,33 @@
     margin: 18px 35px 18px 10px;
 }
 
-.interview-tabs {
-    height: 733px;
+.interviewTabs {
+    height: 585px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    /* border-radius: 10px; */
     opacity: 1;
-    /* margin-left: 27px; */
-    /* margin-right: 27px; */
     position: relative;
-    border: 27px solid #F3F6F9;
+    border: 25px solid #F3F6F9;
 }
 
-.tabs{
-font-size: 25px;
-}
-
-.ant-tabs-tab-btn{
+.tabs {
     font-size: 25px;
 }
 
-.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+.interviewTabs .ant-tabs-tab-btn {
+    font-size: 25px;
+}
+
+.interviewTabs .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
     color: #1C212D;
 }
 
-.tab-btn{
+.tabBtn {
     position: absolute;
     top: 0;
-    right: 0; 
+    right: 0;
 }
 
-.linkedin-btn{
+.interviewTabs .linkedinBtn {
     width: 216px;
     height: 50px;
     border: 1px solid #356966;
@@ -128,7 +124,7 @@ font-size: 25px;
     margin: 5px 10px 0px 5px;
 }
 
-.resume-btn{
+.interviewTabs .resumeBtn {
     width: 241px;
     height: 50px;
     border: 1px solid #356966;
@@ -137,4 +133,47 @@ font-size: 25px;
     color: #356966;
     opacity: 1;
     margin: 5px 10px 0px 5px;
+}
+
+.interviewTabs .ant-tabs-nav-list {
+    margin-left: 10px;
+}
+
+
+.interviewTabs .ant-tabs-ink-bar {
+    background-color: #FFD831;
+    border-bottom-width: 10px;
+}
+
+.interviewInformation .image {
+    width: 188px;
+    height: 188px;
+    margin-top: 20px;
+
+    /* UI Properties */
+
+    background: transparent url('https://picsum.photos/200/300') 0% 0% no-repeat padding-box;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.interviewBtn .left-btn,
+.interviewBtn .right-btn {
+   margin-left: 10px;
+    width: 40px;
+    height: 50px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #356966;
+    border-radius: 10px;
+    opacity: 1;
+    margin: 18px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.interviewpageIcon{
+    font-size: 20px;
+    color: #356966;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { DoubleRightOutlined } from "@ant-design/icons";
 
-export interface rDataType {
+export interface iDataType {
   key: React.Key;
 
   Name: string;
@@ -10,14 +10,14 @@ export interface rDataType {
 
   Date: any;
 
-  Time: string;
+  Time: any;
 
-  status: string;
+  Status: any;
 
   Start: any;
 }
 
-export let rdata: rDataType[] = [
+export let idata: iDataType[] = [
   {
     key: 1,
 
@@ -29,7 +29,7 @@ export let rdata: rDataType[] = [
 
     Time: "11:00",
 
-    status: "Round1",
+    Status: "Round1",
 
     Start: <DoubleRightOutlined />,
   },
@@ -45,7 +45,7 @@ export let rdata: rDataType[] = [
 
     Time: "11:00",
 
-    status: "Round1",
+    Status: "Round1",
 
     Start: <DoubleRightOutlined />,
   },
@@ -61,7 +61,7 @@ export let rdata: rDataType[] = [
 
     Time: "11:00",
 
-    status: "Round1",
+    Status: "Round1",
 
     Start: <DoubleRightOutlined />,
   },
@@ -77,7 +77,7 @@ export let rdata: rDataType[] = [
 
     Time: "11:00",
 
-    status: "Round1",
+    Status: "Round1",
 
     Start: <DoubleRightOutlined />,
   },
@@ -93,7 +93,7 @@ export let rdata: rDataType[] = [
 
     Time: "11:00",
 
-    status: "Round1",
+    Status: "Round1",
 
     Start: <DoubleRightOutlined />,
   },
@@ -108,7 +108,7 @@ export let rdata: rDataType[] = [
 
     Time: "11:00",
 
-    status: "Round1",
+    Status: "Round1",
 
     Start: <DoubleRightOutlined />,
   },
@@ -124,7 +124,7 @@ export let rdata: rDataType[] = [
 
     Time: "11:00",
 
-    status: "Round1",
+    Status: "Round1",
 
     Start: <DoubleRightOutlined />,
   },
@@ -140,7 +140,7 @@ export let rdata: rDataType[] = [
 
     Time: "11:00",
 
-    status: "Round1",
+    Status: "Round1",
 
     Start: <DoubleRightOutlined />,
   },

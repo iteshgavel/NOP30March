@@ -9,12 +9,13 @@ const validateMessages = {
 };
 
 const PersonalDetail = (props: any) => {
-  const [name, setName] = useState(props.personal.name);
-  const [email, setEmail] = useState(props.personal.email);
+  const [name, setName] = useState(props.candidateName);
+  const [email, setEmail] = useState(props.candidateEmail);
 
   const onFinish = (values: any) => {
     console.log(values);
-    props.setPersonal({name: name, email: email});
+    props.setCandidateName(name);
+    props.setCandidateEmail(email);
     props.callPersonal();
   };
 

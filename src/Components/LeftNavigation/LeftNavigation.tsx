@@ -1,6 +1,5 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "./LeftNavigation.css";
-import { useState, useEffect } from 'react';
 
 import { FileTextFilled } from "@ant-design/icons";
 import { Button, Menu } from "antd";
@@ -18,31 +17,44 @@ function Nav(props: any) {
   };
 
   let navigate = useNavigate();
-
   const [selectedKey, setSelectedKey] = useState(
-    localStorage.getItem('selectedKey') || 'defaultKey'
-  );
 
-  const handleMenuClick = (event:any) => {
-    const key = event.key;
-    setSelectedKey(key);
-    localStorage.setItem('selectedKey', key);
-  };
-
-  useEffect(() => {
-    localStorage.setItem('selectedKey', selectedKey);
-  }, [selectedKey]);
-
-
+      localStorage.getItem('selectedKey') || 'defaultKey'
+    
+     );
+    
+    
+    
+    
+     const handleMenuClick = (event:any) => {
+    
+      const key = event.key;
+    
+      setSelectedKey(key);
+    
+      localStorage.setItem('selectedKey', key);
+    
+     };
+    
+    
+    
+    
+     useEffect(() => {
+    
+      localStorage.setItem('selectedKey', selectedKey);
+    
+     }, [selectedKey]);
   return (
     <div>
       <Menu
-        onClick={handleMenuClick}
-        selectedKeys={[selectedKey]}
+        defaultSelectedKeys={["1"]}
+        defaultOpenKeys={["sub1"]}
         mode="inline"
-        theme="light"
         inlineCollapsed={props.collapsed}
         className={menuclass}
+        onClick={handleMenuClick}
+
+    selectedKeys={[selectedKey]}
         items={[
           {
             key: "1",

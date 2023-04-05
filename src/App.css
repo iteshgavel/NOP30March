@@ -1,12 +1,21 @@
+body
+{
+  background-color:#f3f6f9;
+  
+  overflow: hidden;
+}
 .App {
   display: grid;
-  font-family: "Segoe UI VSS (Regular)", "Segoe UI", "-apple-system",
+  /* width: calc(100vw - 34px); */
+  /* font-family: "Segoe UI VSS (Regular)", "Segoe UI", "-apple-system",
     BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Ubuntu, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+ 
+  }
 .main {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
+  /* width: calc(100vw - 34px); */
 }
 
 ::-webkit-scrollbar {
@@ -23,4 +32,7 @@
   color: inherit;
   background: gray;
   border-radius: 10px;
+}
+.ant-input {
+  border-radius: 0;
 }

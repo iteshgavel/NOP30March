@@ -1,3 +1,7 @@
+.interviewMain{
+  width: 100%;
+}
+
 .interview {
   background: #ffffff 0% 0% no-repeat;
   /* box-shadow: 2px 3px 6px #F3F6F9; */
@@ -9,7 +13,7 @@
   font: normal normal 600 25px/33px Segoe UI;
   color: #1C212D;
   opacity: 1;
-  
+  margin: 0px;
 }
 
 .Interview-header {
@@ -24,6 +28,7 @@
 }
 
 .interviewFilterPane {
+  background: #FFFFFF;
   height: 60px;
   display: flex;
   align-items: center;
@@ -40,6 +45,7 @@
   margin: 0px 0px 0px 0px;
   
 }
+
 
 .interview-table .ant-table-container {
   border: 20px;
@@ -67,17 +73,10 @@
   opacity: 1;
 }
 
-
-
 .searchbox{
   height: 40px;
   width: 261px;
   border-radius: 0%;
   border-color: #E5E5E5;
   background-color: #FAFAFA;
-}
-
-.round1-top{
-  display: flex;
-  font-size: 18px;
 }

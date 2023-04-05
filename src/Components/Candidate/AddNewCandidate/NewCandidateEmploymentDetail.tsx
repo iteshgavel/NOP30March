@@ -14,19 +14,17 @@ const App = (props: any) => {
 
   //const countEmployers = props.candidateEmployers.length;
 
-  // const [company, setCompany] = useState(props.candidateEmployer);
-  // const [position, setPosition] = useState(props.candidateDesignation);
-  // const [startDate, setStartDate] = useState(props.candidateStartDate);
-  // const [endDate, setEndDate] = useState(props.candidateEndDate);
-
-  const [company, setCompany] = useState(props.employment.employer);
-  const [position, setPosition] = useState(props.employment.designation);
-  const [startDate, setStartDate] = useState(props.employment.startDate);
-  const [endDate, setEndDate] = useState(props.employment.endDate);
+  const [company, setCompany] = useState(props.candidateEmployer);
+  const [position, setPosition] = useState(props.candidateDesignation);
+  const [startDate, setStartDate] = useState(props.candidateStartDate);
+  const [endDate, setEndDate] = useState(props.candidateEndDate);
 
   const onFinish = (values: any) => {
-    console.log(values); 
-    props.setEmployment({employer: company, designation: position, startDate: startDate, endDate: endDate});
+    console.log(values);
+    props.setCandidateEmployer(company);
+    props.setCandidateDesignation(position);
+    props.setCandidateStartDate(startDate);
+    props.setCandidateEndDate(endDate);
     props.callEmploymentNext();
   };
 

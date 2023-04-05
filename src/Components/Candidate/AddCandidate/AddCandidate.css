@@ -1,5 +1,5 @@
 .formBody {
- padding: 10px;
+ padding: 10px 27px 10px 27px;
  background-color: #f3f6f9;
 }
 
@@ -21,5 +21,6 @@
 }
 
 .AddIcon {
-    font-size: 30px;
+    font-size: 25px;
+    padding-top: 25px;
 }

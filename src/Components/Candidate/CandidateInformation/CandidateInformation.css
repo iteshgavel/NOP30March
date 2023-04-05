@@ -1,13 +1,165 @@
-.cardButton{
-    align-items: center;
-    justify-content: center;
-    height: 50px;
+.candidateInformationContainer {
+  margin-top: 15px;
+  margin-left: 25px;
+  margin-right: 1.4vw;
+}
+.candidateInfoBreadCrumb
+{
+  background-color: white;
+  font-size: 20px;
+  font-size: 33px;
+  padding-left: 30px;
+}
+.candidateInfoBreadCrumb .ant-breadcrumb a:hover
+{
+text-decoration: none;
+}
+.tabOfCandidateInformation .ant-tabs-nav
+{
+  padding-left: 26px;
+}
+.tabOfCandidateInformation {
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
+
+  border-color: aliceblue;
+  border-radius: 2px;
+  background-color: white;
+  min-height: 470px;
+    
+}
+.tabOfCandidateInformation .ant-tabs-ink-bar {
+  background-color: #ffd831;
+  border-bottom-width: 10px;
 }
 
-#root > div > div > div.content > div > div.educationInfo > div:nth-child(1) > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div > div > div > table{
-    width: 50vw;
+.tabOfCandidateInformation .ant-tabs-tab {
+  color: #707070;
+  text-decoration: none;
 }
 
-#root > div > div > div.content > div > div.educationInfo > div:nth-child(2) > div > div.ant-collapse-content.ant-collapse-content-active > div > div > div > div > div > div > div > table{
-    width: 50vw;
+.tabOfCandidateInformation .ant-tabs-tab-active {
+  color: #000000;
+  text-decoration: none;
+}
+.tabOfCandidateInformation .ant-tabs-tab:hover {
+  color: #000000;
+}
+.tabOfCandidateInformation.ant-tabs
+  .ant-tabs-tab.ant-tabs-tab-active
+  .ant-tabs-tab-btn {
+  color: black;
+  text-shadow: 0 0 0.25px currentcolor;
+}
+.tabOfCandidateInformation .ant-tabs-tab-btn {
+  font: normal normal 600 20px/30px Segoe UI;
+}
+.tabOfCandidateInformation .ant-tabs-ink-bar.ant-tabs-ink-bar-animated {
+  height: 6px;
+}
+.generalInformation {
+  width: 100%;
+  padding-top: 10px;
+  min-height: 100px;
+
+  display: flex;
+}
+.generalInformation .image {
+  top: 119px;
+  left: 313px;
+  width: 188px;
+  height: 188px;
+  min-width: 188px;
+  min-height: 188px;
+  background: transparent url("https://picsum.photos/200/300") 0% 0% no-repeat
+    padding-box;
+  border-radius: 50%;
+  opacity: 1;
+}
+.generalInformation .information {
+  margin-left: 50px;
+}
+.generalInformation .links {
+  margin-left: auto;
+  position: relative;
+  margin-right: 1.5vw;
+  
+}
+.generalInformation .shortInfo
+{
+    
+left: 541px;
+
+height: 27px;
+/* UI Properties */
+text-align: left;
+font: normal normal normal 20px/27px Segoe UI;
+letter-spacing: 0px;
+color: #6D6D6D;
+opacity: 1;
+}
+
+.belowButtons {
+    padding: 0px 0px 20px 30px;
+    background-color: white;
+}
+
+.belowButtons .resume-btn {
+  width: 241px;
+
+  height: 50px;
+
+  border: 1px solid #356966;
+
+  font: normal normal normal 20px/27px Segoe UI;
+
+  letter-spacing: 0px;
+
+  color: #356966;
+
+  opacity: 1;
+
+  margin: 5px 10px 0px 5px;
+}
+.belowButtons .linkedin-btn {
+  width: 216px;
+
+  height: 50px;
+
+  border: 1px solid #356966;
+
+  font: normal normal normal 20px/27px Segoe UI;
+
+  letter-spacing: 0px;
+
+  color: #356966;
+
+  opacity: 1;
+
+  margin: 5px 10px 0px 5px;
+}
+
+
+.generalInformation .left-btn,
+.right-btn,.send-email-btn {
+  margin-left: 10px;
+
+  width: fit-content;
+
+  height: 50px;
+
+  background: #ffffff 0% 0% no-repeat padding-box;
+
+  border: 1px solid #356966;
+
+  border-radius: 10px;
+
+  opacity: 1;
+
+  margin: 18px 10px;
+}
+.candidateInformationContainer .educationDetailsTable,.workExperience
+{
+  padding: 25px;
 }

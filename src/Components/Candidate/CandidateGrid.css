@@ -1,27 +1,57 @@
+.button {
+  border: none;
+}
+
 .candidate-table .ant-table-content {
   border: 20px;
   border-color: #f3f6f9;
   margin: 0px 0px 0px 27px;
   font: normal normal normal 16px/14px Segoe UI;
-
+}
+.candidate-table .ant-table-wrapper {
+  max-width: 88.5vw;
 }
 
 .candidate-table .ant-table-container {
   border: 20px;
   border-color: #f3f6f9;
+  background-color: #f7f7f7;
 }
 
-
-.candidate-table .ant-table-thead .ant-table-cell {
-  background: #f8f8f8;
+.candidate-table .ant-table-cell
+{
+  height: 60px;
 }
-
 .candidate-table .ant-table-tbody .ant-table-cell {
   background: white;
 }
+.pagination {
+  margin: 10px 1.2vw 0px 27px;
+  float: right;
+}
+.candidateUtilities {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 1.2vw;
+  margin-bottom: 10px;
+  float: right;
 
-.ant-checkbox-wrapper .ant-checkbox-checked .ant-checkbox-inner {
-  background-color: #ffcc00;
-  border-color: #ffcc00;
+}
+.candidate-table .LinkOfName
+{
+  color: black;
+}
+.titleCandidateDetails
+{ padding-left: 30px;
+  width: 100%;
+  background-color: white;
+  font-size: 33px;
+  align-items: center;
+
+  
+}
+
+.filterPane {
+    padding-right: 20px;
 }
 
