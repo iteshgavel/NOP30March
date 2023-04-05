@@ -1,5 +1,9 @@
 import React from "react";
+import { Table, Rate, Space, Avatar } from "antd";
 import { DoubleRightOutlined } from "@ant-design/icons";
+import MoreEllipses from "../MoreEllipses/MoreEllipses";
+import { Link } from "react-router-dom";
+
 
 export interface iDataType {
   key: React.Key;
@@ -31,7 +35,16 @@ export let idata: iDataType[] = [
 
     Status: "Round1",
 
-    Start: <DoubleRightOutlined />,
+    Start: (
+      <div className="finalFeedback">
+        <div className="rate">
+        <Link to="/Interview/Info"><DoubleRightOutlined /></Link>
+        </div>
+        <div className="ellipses">
+          <MoreEllipses/>
+        </div>
+      </div>
+    ),
   },
 
   {
@@ -47,7 +60,16 @@ export let idata: iDataType[] = [
 
     Status: "Round1",
 
-    Start: <DoubleRightOutlined />,
+    Start: (
+      <div className="finalFeedback">
+        <div className="rate">
+        <Link to="/Interview/Info"><DoubleRightOutlined /></Link>
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses/>
+        </div>
+      </div>
+    ),
   },
 
   {
@@ -63,7 +85,16 @@ export let idata: iDataType[] = [
 
     Status: "Round1",
 
-    Start: <DoubleRightOutlined />,
+    Start: (
+      <div className="finalFeedback">
+        <div className="rate">
+        <Link to="/Interview/Info"><DoubleRightOutlined /></Link>
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses/>
+        </div>
+      </div>
+    ),
   },
 
   {
@@ -79,7 +110,14 @@ export let idata: iDataType[] = [
 
     Status: "Round1",
 
-    Start: <DoubleRightOutlined />,
+    Start: <div className="finalFeedback">
+    <div className="rate">
+    <Link to="/Interview/Info"><DoubleRightOutlined /></Link>
+    </div>
+    <div className="ellipses" style={{ marginLeft: "auto" }}>
+      <MoreEllipses/>
+    </div>
+  </div>,
   },
 
   {
@@ -95,7 +133,14 @@ export let idata: iDataType[] = [
 
     Status: "Round1",
 
-    Start: <DoubleRightOutlined />,
+    Start: <div className="finalFeedback">
+    <div className="rate">
+    <Link to="/Interview/Info"><DoubleRightOutlined /></Link>
+    </div>
+    <div className="ellipses" style={{ marginLeft: "auto" }}>
+      <MoreEllipses/>
+    </div>
+  </div>,
   },
 
   {
@@ -110,7 +155,14 @@ export let idata: iDataType[] = [
 
     Status: "Round1",
 
-    Start: <DoubleRightOutlined />,
+    Start: <div className="finalFeedback">
+    <div className="rate">
+    <Link to="/Interview/Info"><DoubleRightOutlined /></Link>
+    </div>
+    <div className="ellipses" style={{ marginLeft: "auto" }}>
+      <MoreEllipses/>
+    </div>
+  </div>,
   },
 
   {
@@ -126,7 +178,14 @@ export let idata: iDataType[] = [
 
     Status: "Round1",
 
-    Start: <DoubleRightOutlined />,
+    Start: <div className="finalFeedback">
+    <div className="rate">
+    <Link to="/Interview/Info"><DoubleRightOutlined /></Link>
+    </div>
+    <div className="ellipses" style={{ marginLeft: "auto" }}>
+      <MoreEllipses/>
+    </div>
+  </div>,
   },
 
   {
@@ -142,6 +201,13 @@ export let idata: iDataType[] = [
 
     Status: "Round1",
 
-    Start: <DoubleRightOutlined />,
+    Start: <div className="finalFeedback">
+    <div className="rate">
+    <Link to="/Interview/Info"><DoubleRightOutlined /></Link>
+    </div>
+    <div className="ellipses" style={{ marginLeft: "auto" }}>
+      <MoreEllipses/>
+    </div>
+  </div>,
   },
 ];

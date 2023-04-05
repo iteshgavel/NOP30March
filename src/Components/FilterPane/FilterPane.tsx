@@ -200,6 +200,7 @@ const FilterPanBar = (props: any) => {
 
   const selectSSC = (
     <Select
+      value={acadFilters.SSC.comparision}
       menuItemSelectedIcon
       size="small"
       defaultValue="gte"
@@ -220,7 +221,7 @@ const FilterPanBar = (props: any) => {
 
   const selectHSC = (
     <Select
-    
+      value={acadFilters.HSC.comparision}
       menuItemSelectedIcon
       size="small"
       defaultValue="gte"
@@ -241,7 +242,7 @@ const FilterPanBar = (props: any) => {
 
   const selectUG = (
     <Select
-    
+      value={acadFilters.UG.comparision}
       menuItemSelectedIcon
       size="small"
       defaultValue="gte"
@@ -262,7 +263,7 @@ const FilterPanBar = (props: any) => {
 
   const selectPG = (
     <Select
-    
+      value={acadFilters.PG.comparision}
       menuItemSelectedIcon
       size="small"
       defaultValue="gte"

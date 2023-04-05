@@ -12,6 +12,7 @@ import { rDataType, rdata } from "./Components/Candidate/DummyCandidateData";
 import { iDataType, idata } from "./Components/Interview/DummyInterviewData";
 import InterviewInfo from "./Components/Interview/InterviewInfo";
 import AddCandidate from "./Components/Candidate/AddCandidate/AddCandidate";
+import MoreEllipses from "./Components/MoreEllipses/MoreEllipses";
 
 function App() {
   const [collapsed, setCollapsed] = React.useState<boolean>(false);
@@ -90,6 +91,7 @@ function App() {
           </div>
         </div>
       </BrowserRouter>
+      {/* <MoreEllipses/> */}
     </>
   );
 }

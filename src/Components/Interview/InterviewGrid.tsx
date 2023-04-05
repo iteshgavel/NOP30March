@@ -76,7 +76,7 @@ function InterviewGrid(props: InterviewGridPropType) {
           },
         };
       },
-      render: (text: any) => <Link to="/Interview/Info">{text}</Link>,
+      //render: (text: any) => <Link to="/Interview/Info">{text}</Link>,
     },
   ];
 
@@ -92,10 +92,6 @@ function InterviewGrid(props: InterviewGridPropType) {
       <div className="interview-table">
         <Table
           scroll={{ x: true }}
-          // pagination={{
-          //   pageSize: 10,
-          //   position: ["bottomRight"],
-          // }}
           columns={columns}
           dataSource={idata}
           bordered={true}

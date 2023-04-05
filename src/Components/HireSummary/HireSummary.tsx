@@ -4,6 +4,7 @@ import { Table, Rate, Space, Avatar } from "antd";
 import type { ColumnsType, TableProps } from "antd/es/table";
 import { PlusSquareFilled } from "@ant-design/icons";
 import "./HireSummary.css";
+import MoreEllipses from "../MoreEllipses/MoreEllipses";
 
 interface DataType {
   key: React.Key;
@@ -64,11 +65,18 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate
-        character={<PlusSquareFilled />}
-        style={{ color: "#FF9736" }}
-        defaultValue={3}
-      />
+      <div className="finalFeedback">
+        <div className="rate">
+          <Rate
+            character={<PlusSquareFilled />}
+            style={{ color: "#FF9736" }}
+            defaultValue={3}
+          />
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
     ),
   },
   {
@@ -88,11 +96,18 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate
-        character={<PlusSquareFilled />}
-        style={{ color: "#FF9736" }}
-        defaultValue={4}
-      />
+      <div className="finalFeedback">
+        <div className="rate">
+          <Rate
+            character={<PlusSquareFilled />}
+            style={{ color: "#FF9736" }}
+            defaultValue={3}
+          />
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
     ),
   },
   {
@@ -112,11 +127,18 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate
-        character={<PlusSquareFilled />}
-        style={{ color: "#FF9736" }}
-        defaultValue={3}
-      />
+      <div className="finalFeedback">
+        <div className="rate">
+          <Rate
+            character={<PlusSquareFilled />}
+            style={{ color: "#FF9736" }}
+            defaultValue={3}
+          />
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
     ),
   },
   {
@@ -136,11 +158,18 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate
-        character={<PlusSquareFilled />}
-        style={{ color: "#FF9736" }}
-        defaultValue={3}
-      />
+      <div className="finalFeedback">
+        <div className="rate">
+          <Rate
+            character={<PlusSquareFilled />}
+            style={{ color: "#FF9736" }}
+            defaultValue={4}
+          />
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
     ),
   },
   {
@@ -160,11 +189,18 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate
-        character={<PlusSquareFilled />}
-        style={{ color: "#FF9736" }}
-        defaultValue={2}
-      />
+      <div className="finalFeedback">
+        <div className="rate">
+          <Rate
+            character={<PlusSquareFilled />}
+            style={{ color: "#FF9736" }}
+            defaultValue={2}
+          />
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
     ),
   },
   {
@@ -184,11 +220,18 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate
-        character={<PlusSquareFilled />}
-        style={{ color: "#FF9736" }}
-        defaultValue={5}
-      />
+      <div className="finalFeedback">
+        <div className="rate">
+          <Rate
+            character={<PlusSquareFilled />}
+            style={{ color: "#FF9736" }}
+            defaultValue={5}
+          />
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
     ),
   },
   {
@@ -208,11 +251,18 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate
-        character={<PlusSquareFilled />}
-        style={{ color: "#FF9736" }}
-        defaultValue={2}
-      />
+      <div className="finalFeedback">
+        <div className="rate">
+          <Rate
+            character={<PlusSquareFilled />}
+            style={{ color: "#FF9736" }}
+            defaultValue={4}
+          />
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
     ),
   },
   {
@@ -232,11 +282,18 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate
-        character={<PlusSquareFilled />}
-        style={{ color: "#FF9736" }}
-        defaultValue={2}
-      />
+      <div className="finalFeedback">
+        <div className="rate">
+          <Rate
+            character={<PlusSquareFilled />}
+            style={{ color: "#FF9736" }}
+            defaultValue={3}
+          />
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
     ),
   },
   {
@@ -256,11 +313,18 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate
-        character={<PlusSquareFilled />}
-        style={{ color: "#FF9736" }}
-        defaultValue={3}
-      />
+      <div className="finalFeedback">
+        <div className="rate">
+          <Rate
+            character={<PlusSquareFilled />}
+            style={{ color: "#FF9736" }}
+            defaultValue={3}
+          />
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
     ),
   },
   {
@@ -280,11 +344,18 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate
-        character={<PlusSquareFilled />}
-        style={{ color: "#FF9736" }}
-        defaultValue={3}
-      />
+      <div className="finalFeedback">
+        <div className="rate">
+          <Rate
+            character={<PlusSquareFilled />}
+            style={{ color: "#FF9736" }}
+            defaultValue={3}
+          />
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
     ),
   },
   {
@@ -304,11 +375,18 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate
-        character={<PlusSquareFilled />}
-        style={{ color: "#FF9736" }}
-        defaultValue={5}
-      />
+      <div className="finalFeedback">
+        <div className="rate">
+          <Rate
+            character={<PlusSquareFilled />}
+            style={{ color: "#FF9736" }}
+            defaultValue={3}
+          />
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
     ),
   },
   {
@@ -328,11 +406,18 @@ const data: DataType[] = [
       </a>
     ),
     finalFeedback: (
-      <Rate
-        character={<PlusSquareFilled />}
-        style={{ color: "#FF9736" }}
-        defaultValue={3}
-      />
+      <div className="finalFeedback">
+        <div className="rate">
+          <Rate
+            character={<PlusSquareFilled />}
+            style={{ color: "#FF9736" }}
+            defaultValue={3}
+          />
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
     ),
   },
 ];
@@ -348,13 +433,14 @@ const onChange: TableProps<DataType>["onChange"] = (
 
 const HireSummary = () => {
   const [content, setContent] = useState();
+  const [searchedText, setSearchedText] = React.useState("");
 
   return (
     <>
       <div className="hireSummaryBody">
         <div className="totalCandidate">{`${data.length} Candidates`}</div>
         <div className="HireSymmaryfilterPane">
-          <FilterPane setContent={setContent} />
+          <FilterPane setSearchedText={setSearchedText} setContent={setContent} />
         </div>
         <div className="hireSummaryTable">
           <Table

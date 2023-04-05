@@ -363,13 +363,7 @@ function CandidateGrid(props:candidateGridPropType) {
       });
   };
   return (
-    <>
-    <div className="titleCandidateDetails"> 
-      Candidate Details
-      
-    </div>
-      
-  
+    <>    
       <Space
         wrap
         className="candidateUtilities"

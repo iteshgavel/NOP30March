@@ -19,3 +19,9 @@
     padding: 27px;
     background-color: #f3f6f9;
 }
+
+.finalFeedback {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
