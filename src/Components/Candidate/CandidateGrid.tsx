@@ -472,20 +472,6 @@ function CandidateGrid(props: candidateGridPropType) {
         <Link to="/Candidate/AddCandidate">
           <Button icon={<PlusOutlined />}>Add Candidate</Button>
         </Link>
-
-        {/* <Modal
-          title="Add Candidate Detail"
-          open={isAddCandidateModalOpen}
-          onOk={addCandidateHandleOk}
-          onCancel={addCandidateHandleCancel}
-          style={{ top: 10 }}
-          footer={null}
-          width={700}
-        >
-          <Divider />
-          <NewCandidateDetail modalOnOk={() => addCandidateHandleOk()} />
-        </Modal> */}
-
         <Button icon={<PlusOutlined />} onClick={showBulkUploadModal}>
           Bulk Upload
         </Button>

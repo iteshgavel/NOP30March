@@ -31,9 +31,13 @@ function Nav(props: any) {
   const getKeyFromPath = (path: any) => {
     if (path === "/") {
       return "1";
-    } else if (path === "/Candidate") {
+    } else if (
+      path === "/Candidate" ||
+      path === "/candidate/name" ||
+      path === "/Candidate/AddCandidate"
+    ) {
       return "2";
-    } else if (path === "/Interview") {
+    } else if (path === "/Interview" || path === "/Interview/Info") {
       return "3";
     } else if (path === "/Summary") {
       return "4";
@@ -89,7 +93,7 @@ function Nav(props: any) {
           marginBottom: 16,
           position: "fixed",
           bottom: 0,
-          marginLeft: "27px",
+          marginLeft: "24px",
           height: "29px",
           width: "45px",
           color: "black",
