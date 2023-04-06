@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Rate, Space, Avatar } from "antd";
 import { PlusSquareFilled } from "@ant-design/icons";
 import MoreEllipses from "../MoreEllipses/MoreEllipses";
@@ -10,7 +11,8 @@ export interface hDataType {
   positon: string;
   offered: string;
   offerType: string;
-  panelFeedback: any;
+  panel: any;
+  feedback: any;
   finalFeedback: any;
 }
 
@@ -26,9 +28,13 @@ export const hData: hDataType[] = [
     positon: "UX Designer",
     offered: "Yes",
     offerType: "Full Time",
-    panelFeedback: (
-      <a onClick={() => window.open("https://www.google.com/")}>
-        <u>View</u>
+    panel: "",
+    feedback: (
+      <a>
+        <Link to="/Interview/Info">
+          <u>View</u>
+        </Link>
+
       </a>
     ),
     finalFeedback: (
@@ -58,9 +64,17 @@ export const hData: hDataType[] = [
     positon: "UX Designer",
     offered: "Yes",
     offerType: "Full Time",
-    panelFeedback: (
+    panel: (
       <a onClick={() => window.open("https://www.google.com/")}>
         <u>View</u>
+      </a>
+    ),
+    feedback: (
+      <a>
+        <Link to="/Interview/Info">
+          <u>View</u>
+        </Link>
+
       </a>
     ),
     finalFeedback: (
@@ -90,9 +104,17 @@ export const hData: hDataType[] = [
     positon: "Developer",
     offered: "Yes",
     offerType: "Part Time",
-    panelFeedback: (
+    panel: (
       <a onClick={() => window.open("https://www.google.com/")}>
         <u>View</u>
+      </a>
+    ),
+    feedback: (
+      <a>
+        <Link to="/Interview/Info">
+          <u>View</u>
+        </Link>
+
       </a>
     ),
     finalFeedback: (
@@ -122,9 +144,17 @@ export const hData: hDataType[] = [
     positon: "Developer",
     offered: "Yes",
     offerType: "Full Time",
-    panelFeedback: (
+    panel: (
       <a onClick={() => window.open("https://www.google.com/")}>
         <u>View</u>
+      </a>
+    ),
+    feedback: (
+      <a>
+        <Link to="/Interview/Info">
+          <u>View</u>
+        </Link>
+
       </a>
     ),
     finalFeedback: (
@@ -154,9 +184,17 @@ export const hData: hDataType[] = [
     positon: "Developer",
     offered: "Yes",
     offerType: "Full Time",
-    panelFeedback: (
+    panel: (
       <a onClick={() => window.open("https://www.google.com/")}>
         <u>View</u>
+      </a>
+    ),
+    feedback: (
+      <a>
+        <Link to="/Interview/Info">
+          <u>View</u>
+        </Link>
+
       </a>
     ),
     finalFeedback: (
@@ -186,9 +224,17 @@ export const hData: hDataType[] = [
     positon: "Developer",
     offered: "Yes",
     offerType: "Full Time",
-    panelFeedback: (
+    panel: (
       <a onClick={() => window.open("https://www.google.com/")}>
         <u>View</u>
+      </a>
+    ),
+    feedback: (
+      <a>
+        <Link to="/Interview/Info">
+          <u>View</u>
+        </Link>
+
       </a>
     ),
     finalFeedback: (
@@ -218,9 +264,17 @@ export const hData: hDataType[] = [
     positon: "Developer",
     offered: "Yes",
     offerType: "Full Time",
-    panelFeedback: (
+    panel: (
       <a onClick={() => window.open("https://www.google.com/")}>
         <u>View</u>
+      </a>
+    ),
+    feedback: (
+      <a>
+        <Link to="/Interview/Info">
+          <u>View</u>
+        </Link>
+
       </a>
     ),
     finalFeedback: (
@@ -250,9 +304,17 @@ export const hData: hDataType[] = [
     positon: "Manager",
     offered: "Yes",
     offerType: "Part Time",
-    panelFeedback: (
+    panel: (
       <a onClick={() => window.open("https://www.google.com/")}>
         <u>View</u>
+      </a>
+    ),
+    feedback: (
+      <a>
+        <Link to="/Interview/Info">
+          <u>View</u>
+        </Link>
+
       </a>
     ),
     finalFeedback: (
@@ -282,9 +344,17 @@ export const hData: hDataType[] = [
     positon: "Manager",
     offered: "Yes",
     offerType: "Part Time",
-    panelFeedback: (
+    panel: (
       <a onClick={() => window.open("https://www.google.com/")}>
         <u>View</u>
+      </a>
+    ),
+    feedback: (
+      <a>
+        <Link to="/Interview/Info">
+          <u>View</u>
+        </Link>
+
       </a>
     ),
     finalFeedback: (
@@ -314,9 +384,17 @@ export const hData: hDataType[] = [
     positon: "Manager",
     offered: "Yes",
     offerType: "Full Time",
-    panelFeedback: (
+    panel: (
       <a onClick={() => window.open("https://www.google.com/")}>
         <u>View</u>
+      </a>
+    ),
+    feedback: (
+      <a>
+        <Link to="/Interview/Info">
+          <u>View</u>
+        </Link>
+
       </a>
     ),
     finalFeedback: (
@@ -346,9 +424,17 @@ export const hData: hDataType[] = [
     positon: "Engineer",
     offered: "Yes",
     offerType: "Full Time",
-    panelFeedback: (
+    panel: (
       <a onClick={() => window.open("https://www.google.com/")}>
         <u>View</u>
+      </a>
+    ),
+    feedback: (
+      <a>
+        <Link to="/Interview/Info">
+          <u>View</u>
+        </Link>
+
       </a>
     ),
     finalFeedback: (
@@ -378,9 +464,17 @@ export const hData: hDataType[] = [
     positon: "Engineer",
     offered: "Yes",
     offerType: "Full Time",
-    panelFeedback: (
+    panel: (
       <a onClick={() => window.open("https://www.google.com/")}>
         <u>View</u>
+      </a>
+    ),
+    feedback: (
+      <a>
+        <Link to="/Interview/Info">
+          <u>View</u>
+        </Link>
+
       </a>
     ),
     finalFeedback: (

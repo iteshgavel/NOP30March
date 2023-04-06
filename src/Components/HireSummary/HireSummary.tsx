@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FilterPane from "../FilterPane/FilterPane";
-import { Table } from "antd";
+import {Link} from 'react-router-dom'
+import { Table, Modal } from "antd";
 import type { ColumnsType, TableProps } from "antd/es/table";
 import { hData, hDataType } from "./DummyHireSummaryData";
 import "./HireSummary.css";
@@ -17,6 +18,42 @@ const onChange: TableProps<hDataType>["onChange"] = (
 const HireSummary = () => {
   const [content, setContent] = useState();
   const [searchedText, setSearchedText] = React.useState("");
+  const [modal2Open, setModal2Open] = useState(false);
+
+  const panelCol = [
+    {
+      title: 'Rounds',
+      dataIndex: 'rounds',
+      key: 'rounds',
+      width: 150
+    },
+    {
+      title: 'Panels',
+      dataIndex: 'panels',
+      key: 'panels',
+    },
+  ];
+
+  const dataSource = [
+    {
+      key: '1',
+      rounds: 'Round1',
+      panels: " ",
+      
+    },
+    {
+      key: '2',
+      rounds: 'Round2',
+      panels: "",
+      
+    },
+    {
+      key: '3',
+      rounds: 'Round3',
+      panels: "",  
+    },
+  ]
+  
 
   const columns: ColumnsType<hDataType> = [
     {
@@ -24,6 +61,7 @@ const HireSummary = () => {
       dataIndex: "candidateName",
       filteredValue: [searchedText],
       sorter: (a, b) => a.Name.length - b.Name.length,
+      render: (text: any) => <Link className="LinkOfName" to="/Interview/Info">{text}</Link>,
       onFilter: (value: any, record: any) => {
         return String(record.Name).toLowerCase().includes(value.toLowerCase());
       },
@@ -45,8 +83,15 @@ const HireSummary = () => {
       sorter: (a, b) => a.offerType.length - b.offerType.length,
     },
     {
-      title: "Panel/Feedback",
-      dataIndex: "panelFeedback",
+      title: "Panel",
+      dataIndex: "panel",
+      render: (text, record) => (
+        <a onClick={() => setModal2Open(true)}><u>View</u></a>
+      ),
+    },
+    {
+      title: "Feedback",
+      dataIndex: "feedback",
     },
     {
       title: "Final Feedback",
@@ -73,6 +118,16 @@ const HireSummary = () => {
             bordered
           />
         </div>
+        <Modal
+        footer={null}
+        centered
+        open={modal2Open}
+        onOk={() => setModal2Open(false)}
+        onCancel={() => setModal2Open(false)}
+        style={{padding : 0}}
+      >
+        <Table dataSource={dataSource} columns={panelCol} pagination={false}   bordered={true}/>
+      </Modal>
       </div>
     </>
   );
