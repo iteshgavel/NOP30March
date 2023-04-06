@@ -1,21 +1,16 @@
-body
-{
-  background-color:#f3f6f9;
-  
+body {
+  background-color: #f3f6f9;
   overflow: hidden;
 }
 .App {
   display: grid;
-  /* width: calc(100vw - 34px); */
-  /* font-family: "Segoe UI VSS (Regular)", "Segoe UI", "-apple-system",
-    BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Ubuntu, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
- 
-  }
+}
 .main {
   display: flex;
   flex-direction: row;
   /* width: calc(100vw - 34px); */
+  
+
 }
 
 ::-webkit-scrollbar {

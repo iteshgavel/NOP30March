@@ -2,10 +2,9 @@ import React from "react";
 import { Table } from "antd";
 import { idata, iDataType } from "./DummyInterviewData";
 import FilterPane from "../FilterPane/FilterPane";
-
+import type { ColumnsType } from "antd/es/table";
 import "./Interview.css";
 
-import type { ColumnsType } from "antd/es/table";
 interface InterviewGridPropType {
   content: iDataType[];
   setContent: React.Dispatch<React.SetStateAction<iDataType[]>>;
@@ -15,7 +14,6 @@ interface InterviewGridPropType {
 function InterviewGrid(props: InterviewGridPropType) {
   const [content, setContent] = React.useState(idata);
   const [searchedText, setSearchedText] = React.useState("");
-  //   const dispatch = useDispatch();
   const columns: ColumnsType<iDataType> = [
     {
       title: "Name",
@@ -74,28 +72,31 @@ function InterviewGrid(props: InterviewGridPropType) {
           },
         };
       },
-      //render: (text: any) => <Link to="/Interview/Info">{text}</Link>,
     },
   ];
 
-  const [filter, setFilter] = React.useState(true);
-
   return (
-    <div className="interviewMain">
-      <div className="interviewFilterPane">
-        {" "}
-        <FilterPane setSearchedText={setSearchedText} setContent={setContent} />
-      </div>
+    <>
+      <div className="interviewMain">
+      <div className="totalCandidate">{`${idata.length} Candidates`}</div>
+        <div className="interviewFilterPane">
+          {" "}
+          <FilterPane
+            setSearchedText={setSearchedText}
+            setContent={setContent}
+          />
+        </div>
 
-      <div className="interview-table">
-        <Table
-          scroll={{ x: true }}
-          columns={columns}
-          dataSource={idata}
-          bordered={true}
-        />
+        <div className="interview-table">
+          <Table
+            scroll={{ x: true }}
+            columns={columns}
+            dataSource={idata}
+            bordered={true}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

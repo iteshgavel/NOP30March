@@ -49,6 +49,7 @@ function CandidateGrid(props:candidateGridPropType) {
 
   //By default disabling 'delete' and 'Schedule' button if no rows are selected
   const [buttonStatus, setButtonStatus] = React.useState(true);
+  const candidateGridClassName=props.collapsed?"candidate-table":"candidate-table-shrinked"
   const itemRender: PaginationProps["itemRender"] = (
     page,
     type,
@@ -211,7 +212,7 @@ function CandidateGrid(props:candidateGridPropType) {
       sorter: (a, b) => a["Diploma %"].localeCompare(b["Diploma %"]),
     },
     {
-      title: "RollNO",
+      title: "Roll No",
       dataIndex: "RollNo",
       key: "Reg",
       width: 150,
@@ -489,7 +490,7 @@ function CandidateGrid(props:candidateGridPropType) {
       <div className="gridAndPane">
         <div className="filterPane">{filterPane}</div>
         <Divider style={{ marginTop: 10, marginBottom: 10, width: "100%" }} />
-        <div className="candidate-table">
+        <div className={candidateGridClassName}>
           <Table
             bordered
             scroll={{ x: true}}

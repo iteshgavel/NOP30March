@@ -2,14 +2,16 @@
   border: none;
 }
 
-.candidate-table .ant-table-content {
+/* .candidate-table .ant-table-content {
   border: 20px;
   border-color: #f3f6f9;
   margin: 0px 0px 0px 27px;
   font: normal normal normal 16px/14px Segoe UI;
-}
-.candidate-table .ant-table-wrapper {
-  max-width: 88.5vw;
+} */
+.candidate-table
+{
+  margin-left: 27px;
+  width: calc(100vw - 134px);
 }
 
 .candidate-table .ant-table-container {
@@ -18,12 +20,30 @@
   background-color: #f3f6f9;
 }
 
-.candidate-table .ant-table-cell
-{
-  height: 60px;
-}
 .candidate-table .ant-table-tbody .ant-table-cell {
   background: white;
+}
+
+.candidate-table .LinkOfName {
+  color: black;
+}
+.candidate-table-shrinked
+{
+  margin-left: 27px;
+  width: calc(90vw - 50px);
+}
+
+.candidate-table-shrinked .ant-table-container {
+  border: 20px;
+  border-color: #f3f6f9;
+  background-color: #f3f6f9;
+}
+
+.candidate-table-shrinked .ant-table-tbody .ant-table-cell {
+  background: white;
+}
+.candidate-table-shrinked .LinkOfName {
+  color: black;
 }
 .pagination {
   margin: 10px 1.2vw 0px 27px;
@@ -35,23 +55,15 @@
   margin-right: 1.2vw;
   margin-bottom: 10px;
   float: right;
-
 }
-.candidate-table .LinkOfName
-{
-  color: black;
-}
-.titleCandidateDetails
-{ padding-left: 30px;
+.titleCandidateDetails {
+  padding-left: 30px;
   width: 100%;
   background-color: white;
   font-size: 33px;
   align-items: center;
-
-  
 }
 
 .filterPane {
-    padding-right: 20px;
+  padding-right: 20px;
 }
-

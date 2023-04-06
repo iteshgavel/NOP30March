@@ -5,12 +5,6 @@ import InterviewGrid from "../Components/Interview/InterviewGrid";
 function Interview(props: any) {
   return (
     <>
-      <div className="Interview-header">
-        <span style={{ fontSize: "30px", fontFamily: "Segoe UI" }}>
-          Candidates
-        </span>
-      </div>
-
       <InterviewGrid
         content={props.interviewContent}
         setContent={props.setInterviewContent}

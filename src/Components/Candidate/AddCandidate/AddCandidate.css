@@ -1,6 +1,8 @@
 .formBody {
  padding: 10px 27px 10px 27px;
  background-color: #f3f6f9;
+ height: 90vh;
+ overflow: auto;
 }
 
 .educationDetail {

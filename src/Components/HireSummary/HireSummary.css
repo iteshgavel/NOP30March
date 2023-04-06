@@ -1,27 +1,23 @@
-.hireSummaryBody {
-    
-}
-
-.totalCandidate{
-    padding: 10px 0px 10px 27px;
-    background-color: #f3f6f9;
-    font-size: 30px;
-    align-items: left;
-    opacity: 1;
+.totalCandidate {
+  padding: 10px 0px 10px 27px;
+  background-color: #f3f6f9;
+  font-size: 30px;
+  align-items: left;
+  opacity: 1;
 }
 
 .HireSymmaryfilterPane {
-    background-color: white;
-    padding: 10px 16px 10px 0px;
+  background-color: white;
+  padding: 10px 16px 10px 0px;
 }
 
-.hireSummaryTable{
-    padding: 27px;
-    background-color: #f3f6f9;
+.hireSummaryTable {
+  padding: 27px;
+  background-color: #f3f6f9;
 }
 
 .finalFeedback {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
