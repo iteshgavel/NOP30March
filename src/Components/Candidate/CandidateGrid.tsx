@@ -30,9 +30,7 @@ import {
 import type { ColumnsType } from "antd/es/table";
 import ScheduleModal from "./ScheduleModal";
 import DeleteCandidateModal from "./DeleteCandidateModal";
-import NewCandidateDetail from "./AddNewCandidate/NewCandidateDetail";
 import FilterPaneBar from "../FilterPane/FilterPane";
-import { useDispatch } from "react-redux";
 //defining datatype of the data
 const RefreshPage = () => {
   window.location.reload();
@@ -113,24 +111,8 @@ function CandidateGrid(props: candidateGridPropType) {
     console.log(openDeleteModal);
   };
 
-  //Show Add Single Candidate Modal
-  const [isAddCandidateModalOpen, setIsAddCandidateModalOpen] =
-    React.useState(false);
-
-  const addCandidateShowModal = () => {
-    setIsAddCandidateModalOpen(true);
-  };
-
-  const addCandidateHandleOk = () => {
-    setIsAddCandidateModalOpen(false);
-  };
-
-  const addCandidateHandleCancel = () => {
-    setIsAddCandidateModalOpen(false);
-  };
-
   const [searchedText, setSearchedText] = React.useState("");
-  const dispatch = useDispatch();
+  
   const columns: ColumnsType<rDataType> = [
     {
       title: "Name",
