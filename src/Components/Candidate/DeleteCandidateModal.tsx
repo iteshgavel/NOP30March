@@ -32,6 +32,7 @@ function DeleteCandidateModal(props:any){
   return (
     <>
      <Modal
+     centered
         closable={false}
         open={props.visible}
         onOk={onOk}

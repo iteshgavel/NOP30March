@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { rDataType } from "../../Components/Candidate/DummyCandidateData";
+import MoreEllipses from "../../Components/MoreEllipses/MoreEllipses";
 const showSlice = createSlice({
   name: "displayedCandidate",
   initialState: {
@@ -50,6 +51,16 @@ const showSlice = createSlice({
     Backlog: 0,
 
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses/>
+        </div>
+      </div>
+    ),
     PhoneNo: 1234567890,
 
     Company: "MAQ Software",

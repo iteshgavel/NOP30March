@@ -1,4 +1,4 @@
-.interviewMain{
+.interviewMain {
   width: 100%;
 }
 
@@ -11,7 +11,7 @@
   align-items: center;
   text-indent: 27px;
   font: normal normal 600 25px/33px Segoe UI;
-  color: #1C212D;
+  color: #1c212d;
   opacity: 1;
   margin: 0px;
 }
@@ -23,33 +23,31 @@
   text-indent: 27px;
   display: flex;
   align-items: center;
-  letter-spacing: 0px;color: #1C212D;
+  letter-spacing: 0px;
+  color: #1c212d;
   opacity: 1;
 }
 
 .interviewFilterPane {
-  background: #FFFFFF;
+  background: #ffffff;
   height: 60px;
   display: flex;
   align-items: center;
-  font-style: #474D5B;
+  font-style: #474d5b;
 }
 
-.interview-table{
-  border: 27px solid #F3F6F9;
-
+.interview-table {
+  border: 27px solid #f3f6f9;
 }
 .interview-table .ant-table-content {
   border: 20px;
-  border-color: #F3F6F9;
+  border-color: #f3f6f9;
   margin: 0px 0px 0px 0px;
-  
 }
-
 
 .interview-table .ant-table-container {
   border: 20px;
-  border-color: #F3F6F9;
+  border-color: #f3f6f9;
 }
 
 .interview-table .ant-table-thead .ant-table-cell {
@@ -58,14 +56,13 @@
   text-align: left;
   font: normal normal 600 18px/16px Segoe UI;
   letter-spacing: 0.49px;
-  color: #1A3937;
+  color: #1a3937;
   opacity: 1;
 }
 
 .interview-table .ant-table-tbody .ant-table-cell {
   height: 71px;
   background: white;
- 
   text-align: left;
   font: normal normal normal 18px/16px Segoe UI;
   letter-spacing: 0.49px;
@@ -73,10 +70,10 @@
   opacity: 1;
 }
 
-.searchbox{
+.searchbox {
   height: 40px;
   width: 261px;
-  border-radius: 0%;
-  border-color: #E5E5E5;
-  background-color: #FAFAFA;
+  /* border-radius: 0%; */
+  border-color: #e5e5e5;
+  background-color: #fafafa;
 }

@@ -7,10 +7,7 @@ body {
 }
 .main {
   display: flex;
-  flex-direction: row;
-  /* width: calc(100vw - 34px); */
-  
-
+  flex-direction: row;  
 }
 
 ::-webkit-scrollbar {
@@ -28,6 +25,4 @@ body {
   background: gray;
   border-radius: 10px;
 }
-.ant-input {
-  border-radius: 0;
-}
+

@@ -1,28 +1,30 @@
 .formBody {
- padding: 10px 27px 10px 27px;
- background-color: #f3f6f9;
- height: 90vh;
- overflow: auto;
+  padding: 10px 27px 10px 27px;
+  background-color: #f3f6f9;
+  height: 90vh;
+  overflow: auto;
 }
 
 .educationDetail {
-    padding: 10px;
-    background-color: white;
-    border-radius: 10px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .workExperienceDetail {
-    padding: 10px;
-    background-color: white;
-    border-radius: 10px;
+  background-color: white;
+  border-radius: 10px;
 }
 
 .row {
-    margin-top: 0;
-    margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .AddIcon {
-    font-size: 25px;
-    padding-top: 25px;
+  font-size: 25px;
+  padding-top: 25px;
+}
+
+.ant-collapse-large >.ant-collapse-item >.ant-collapse-header {
+    padding: 10px 10px;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Pagination,
   Divider,
@@ -7,6 +7,7 @@ import {
   Button,
   Upload,
   Modal,
+  message,
 } from "antd";
 import type { PaginationProps } from "antd";
 import { CSVLink } from "react-csv";
@@ -22,6 +23,8 @@ import {
   CalendarFilled,
   FileExcelFilled,
   ReloadOutlined,
+  CloseOutlined,
+  CheckOutlined,
 } from "@ant-design/icons";
 
 import type { ColumnsType } from "antd/es/table";
@@ -35,21 +38,36 @@ const RefreshPage = () => {
   window.location.reload();
 };
 
-interface candidateGridPropType{
-  collapsed:boolean,
-  setCollapsed:React.Dispatch<React.SetStateAction<boolean>>,
-  content:rDataType[],
-  setContent:React.Dispatch<React.SetStateAction<rDataType[]>>,
-  showingCandidateInfo:rDataType,
-  setShowingCandidateInfo:React.Dispatch<React.SetStateAction<rDataType>>
+interface candidateGridPropType {
+  collapsed: boolean;
+  setCollapsed: React.Dispatch<React.SetStateAction<boolean>>;
+  content: rDataType[];
+  setContent: React.Dispatch<React.SetStateAction<rDataType[]>>;
+  showingCandidateInfo: rDataType;
+  setShowingCandidateInfo: React.Dispatch<React.SetStateAction<rDataType>>;
 }
-function CandidateGrid(props:candidateGridPropType) {
-  console.log("candidateprops,props",props)
-  const [selectedRows, setSelectedRows]: any = React.useState([]);
+function CandidateGrid(props: candidateGridPropType) {
+  console.log("candidateprops,props", props);
+  const [selectedRows, setSelectedRows]: any = useState([]);
+
+  const [openBulkUploadModal, SetOpenBulkUploadModal] = useState(false);
+  const showBulkUploadModal = () => {
+    SetOpenBulkUploadModal(true);
+  };
+  const handleBulkUploadModalYes = () => {
+    message.success("Bulk Candidate uploaded successfylly!");
+    SetOpenBulkUploadModal(false);
+  };
+
+  const handleBulkUploadModalNo = () => {
+    SetOpenBulkUploadModal(false);
+  };
 
   //By default disabling 'delete' and 'Schedule' button if no rows are selected
-  const [buttonStatus, setButtonStatus] = React.useState(true);
-  const candidateGridClassName=props.collapsed?"candidate-table":"candidate-table-shrinked"
+  const [buttonStatus, setButtonStatus] = useState(true);
+  const candidateGridClassName = props.collapsed
+    ? "candidate-table"
+    : "candidate-table-shrinked";
   const itemRender: PaginationProps["itemRender"] = (
     page,
     type,
@@ -86,7 +104,7 @@ function CandidateGrid(props:candidateGridPropType) {
   const [open, setOpen] = React.useState(false);
   const [openDeleteModal, setOpenDeleteModal] = React.useState(false);
   const [pagination, setPagination] = React.useState({ page: 1, pageSize: 10 });
-  
+
   const showModal = () => {
     setOpen(true);
   };
@@ -123,12 +141,16 @@ function CandidateGrid(props:candidateGridPropType) {
       onCell: (record: any) => {
         return {
           onClick: () => {
-            props.setShowingCandidateInfo(record)
+            props.setShowingCandidateInfo(record);
             console.log(record);
           },
         };
       },
-      render: (text: any) => <Link className="LinkOfName" to="/candidate/name">{text}</Link>,
+      render: (text: any) => (
+        <Link className="LinkOfName" to="/candidate/name">
+          {text}
+        </Link>
+      ),
       filteredValue: [searchedText],
       onFilter: (value: any, record: rDataType) => {
         return String(record.Name).toLowerCase().includes(value.toLowerCase());
@@ -187,30 +209,30 @@ function CandidateGrid(props:candidateGridPropType) {
         return a["HSC %"] - b["HSC %"];
       },
     },
-    {
-      title: "Diploma Branch",
-      dataIndex: "Diploma Branch",
-      key: "Diploma Branch",
-      width: 150,
-      ellipsis: true,
-      sorter: (a, b) => a["Diploma Branch"].localeCompare(b["Diploma Branch"]),
-    },
-    {
-      title: "Diploma CGPA",
-      dataIndex: "Diploma CGPA",
-      key: "Diploma CGPA",
-      width: 150,
-      ellipsis: true,
-      sorter: (a, b) => a["Diploma CGPA"].localeCompare(b["Diploma CGPA"]),
-    },
-    {
-      title: "Diploma %",
-      dataIndex: "Diploma %",
-      key: "Diploma %",
-      width: 150,
-      ellipsis: true,
-      sorter: (a, b) => a["Diploma %"].localeCompare(b["Diploma %"]),
-    },
+    // {
+    //   title: "Diploma Branch",
+    //   dataIndex: "Diploma Branch",
+    //   key: "Diploma Branch",
+    //   width: 150,
+    //   ellipsis: true,
+    //   sorter: (a, b) => a["Diploma Branch"].localeCompare(b["Diploma Branch"]),
+    // },
+    // {
+    //   title: "Diploma CGPA",
+    //   dataIndex: "Diploma CGPA",
+    //   key: "Diploma CGPA",
+    //   width: 150,
+    //   ellipsis: true,
+    //   sorter: (a, b) => a["Diploma CGPA"].localeCompare(b["Diploma CGPA"]),
+    // },
+    // {
+    //   title: "Diploma %",
+    //   dataIndex: "Diploma %",
+    //   key: "Diploma %",
+    //   width: 150,
+    //   ellipsis: true,
+    //   sorter: (a, b) => a["Diploma %"].localeCompare(b["Diploma %"]),
+    // },
     {
       title: "Roll No",
       dataIndex: "RollNo",
@@ -323,7 +345,7 @@ function CandidateGrid(props:candidateGridPropType) {
     },
     {
       title: "Rank",
-      dataIndex: "Rank",
+      dataIndex: "RankEllipses",
       key: "Rank",
       width: 150,
 
@@ -364,12 +386,8 @@ function CandidateGrid(props:candidateGridPropType) {
       });
   };
   return (
-    <>    
-      <Space
-        wrap
-        className="candidateUtilities"
-        
-      >
+    <>
+      <Space wrap className="candidateUtilities">
         <CSVLink filename={"Data.csv"} data={rdata}>
           <Button
             icon={<FileExcelFilled style={{ color: "green" }} />}
@@ -423,7 +441,6 @@ function CandidateGrid(props:candidateGridPropType) {
           Schedule
         </Button>
         <ScheduleModal visible={open} setOpen={setOpen} />
-
         <Button
           icon={<FilterFilled />}
           onClick={() => setFilter(!filter)}
@@ -453,12 +470,10 @@ function CandidateGrid(props:candidateGridPropType) {
           Refresh
         </Button>
         <Link to="/Candidate/AddCandidate">
-        <Button icon={<PlusOutlined />}>
-          Add Candidate
-        </Button>
+          <Button icon={<PlusOutlined />}>Add Candidate</Button>
         </Link>
-        
-        <Modal
+
+        {/* <Modal
           title="Add Candidate Detail"
           open={isAddCandidateModalOpen}
           onOk={addCandidateHandleOk}
@@ -469,23 +484,64 @@ function CandidateGrid(props:candidateGridPropType) {
         >
           <Divider />
           <NewCandidateDetail modalOnOk={() => addCandidateHandleOk()} />
-        </Modal>
+        </Modal> */}
 
-        <Upload
-          accept=".csv"
-          showUploadList={false}
-          beforeUpload={(file) => {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-              csvToJson(e.target?.result);
-            };
-            reader.readAsText(file);
-            // Prevent upload
-            return false;
-          }}
+        <Button icon={<PlusOutlined />} onClick={showBulkUploadModal}>
+          Bulk Upload
+        </Button>
+        <Modal
+          centered
+          title="Add Candidate(s)"
+          open={openBulkUploadModal}
+          onCancel={handleBulkUploadModalNo}
+          footer={null}
         >
-          <Button icon={<PlusOutlined />}>Bulk Upload</Button>
-        </Upload>
+          <br />
+          <div>
+            <Upload
+              accept=".csv"
+              maxCount={1}
+              beforeUpload={(file) => {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                  csvToJson(e.target?.result);
+                };
+                reader.readAsText(file);
+                // Prevent upload
+                return false;
+              }}
+            >
+              <Button type="primary">Choose file</Button>
+            </Upload>
+          </div>
+          <br />
+          <div className="bulkUploadModalFooter">
+            <div>
+              <a href="/">
+                <strong>
+                  <u>Download Template</u>
+                </strong>
+              </a>
+            </div>
+            <div>
+              <Button
+                icon={<CloseOutlined />}
+                onClick={handleBulkUploadModalNo}
+              >
+                No
+              </Button>
+              <Button
+                key="submit"
+                type="primary"
+                icon={<CheckOutlined />}
+                onClick={handleBulkUploadModalYes}
+                style={{ marginLeft: 20 }}
+              >
+                Yes
+              </Button>
+            </div>
+          </div>
+        </Modal>
       </Space>
       <div className="gridAndPane">
         <div className="filterPane">{filterPane}</div>
@@ -493,10 +549,10 @@ function CandidateGrid(props:candidateGridPropType) {
         <div className={candidateGridClassName}>
           <Table
             bordered
-            scroll={{ x: true}}
+            scroll={{ x: true }}
             pagination={{
               pageSize: 10,
-              position:[],
+              position: [],
               current: pagination.page,
             }}
             columns={columns}
@@ -505,19 +561,16 @@ function CandidateGrid(props:candidateGridPropType) {
               ...rowSelection,
               fixed: "left",
               columnWidth: 100,
-              
             }}
           />
           <div className="pagination">
             <Pagination
               showSizeChanger
-              
               total={props.content.length}
               onChange={(page, pagesize) =>
                 setPagination({ page, pageSize: pagesize })
               }
               itemRender={itemRender}
-              
             />
           </div>
         </div>

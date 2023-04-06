@@ -1,5 +1,6 @@
 import React from "react";
 import { Avatar, Space } from "antd";
+import MoreEllipses from "../MoreEllipses/MoreEllipses";
 
 export interface rDataType {
   key: React.Key;
@@ -27,6 +28,7 @@ export interface rDataType {
   College: string;
   Backlog: number;
   Rank: number;
+  RankEllipses: any;
   PhoneNo: number;
   Company: string;
   Designation: string;
@@ -60,6 +62,14 @@ export let rdata: rDataType[] = [
     College: "DAIICT",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">1</div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 1234567890,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -90,7 +100,17 @@ export let rdata: rDataType[] = [
     "Applied for": "12 Months Internship + Full Time",
     College: "Nirma",
     Backlog: 0,
-    Rank: 1,
+    Rank: 2,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          2
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 9989030948,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -117,7 +137,7 @@ export let rdata: rDataType[] = [
     "UG CGPA": 7.78,
     "UG %": 77.8,
     "PG Course": "",
-   "PG Branch": "",
+    "PG Branch": "",
 
     "PG CGPA": null,
     "PG %": null,
@@ -125,6 +145,16 @@ export let rdata: rDataType[] = [
     College: "PDPU",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 2341536567,
     Company: "",
     Designation: "",
@@ -157,6 +187,16 @@ export let rdata: rDataType[] = [
     College: "DDU",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 1234567890,
     Company: "MAQ Software",
     Designation: "Software Engineer 2",
@@ -189,6 +229,16 @@ export let rdata: rDataType[] = [
     College: "PDPU",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 6758299928,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -220,7 +270,17 @@ export let rdata: rDataType[] = [
     "Applied for": "Full Time",
     College: "DAIICT",
     Backlog: 0,
-    Rank: 1,
+    Rank: 2,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          2
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 1345689073,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -253,6 +313,16 @@ export let rdata: rDataType[] = [
     College: "DDU",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 5647831894,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -285,6 +355,16 @@ export let rdata: rDataType[] = [
     College: "Nirma",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 4561890482,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -316,6 +396,16 @@ export let rdata: rDataType[] = [
     College: "Nirmala",
     Backlog: 0,
     Rank: 6,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          6
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 4561890682,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -347,6 +437,16 @@ export let rdata: rDataType[] = [
     College: "Harvard",
     Backlog: 0,
     Rank: 6,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          6
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 4561890382,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -378,6 +478,16 @@ export let rdata: rDataType[] = [
     College: "Oxford",
     Backlog: 0,
     Rank: 6,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          6
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 4567890682,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -409,6 +519,16 @@ export let rdata: rDataType[] = [
     College: "DAIICT",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 1234567890,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -440,6 +560,16 @@ export let rdata: rDataType[] = [
     College: "Nirma",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 9989030948,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -466,7 +596,7 @@ export let rdata: rDataType[] = [
     "UG CGPA": 7.78,
     "UG %": 77.8,
     "PG Course": "",
-   "PG Branch": "",
+    "PG Branch": "",
 
     "PG CGPA": null,
     "PG %": null,
@@ -474,6 +604,16 @@ export let rdata: rDataType[] = [
     College: "PDPU",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 2341536567,
     Company: "",
     Designation: "",
@@ -506,6 +646,16 @@ export let rdata: rDataType[] = [
     College: "DDU",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 1234567890,
     Company: "MAQ Software",
     Designation: "Software Engineer 2",
@@ -538,6 +688,16 @@ export let rdata: rDataType[] = [
     College: "PDPU",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 6758299928,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -570,6 +730,16 @@ export let rdata: rDataType[] = [
     College: "DAIICT",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 1345689073,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -602,6 +772,16 @@ export let rdata: rDataType[] = [
     College: "DDU",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 5647831894,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -634,6 +814,16 @@ export let rdata: rDataType[] = [
     College: "Nirma",
     Backlog: 0,
     Rank: 1,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          1
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 4561890482,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -665,6 +855,16 @@ export let rdata: rDataType[] = [
     College: "Nirmala",
     Backlog: 0,
     Rank: 6,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          6
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 4561890682,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -696,6 +896,16 @@ export let rdata: rDataType[] = [
     College: "Harvard",
     Backlog: 0,
     Rank: 6,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          6
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 4561890382,
     Company: "MAQ Software",
     Designation: "Software Engineer",
@@ -727,6 +937,16 @@ export let rdata: rDataType[] = [
     College: "Oxford",
     Backlog: 0,
     Rank: 6,
+    RankEllipses: (
+      <div className="finalFeedback">
+        <div className="rank">
+          6
+        </div>
+        <div className="ellipses" style={{ marginLeft: "auto" }}>
+          <MoreEllipses />
+        </div>
+      </div>
+    ),
     PhoneNo: 4567890682,
     Company: "MAQ Software",
     Designation: "Software Engineer",

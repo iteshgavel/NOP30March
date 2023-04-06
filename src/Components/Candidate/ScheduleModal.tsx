@@ -1,4 +1,12 @@
-import { Modal, Form, Select, DatePicker, TimePicker, Button, message  } from "antd";
+import {
+  Modal,
+  Form,
+  Select,
+  DatePicker,
+  TimePicker,
+  Button,
+  message,
+} from "antd";
 
 const layout = {
   labelCol: { span: 8 },
@@ -10,7 +18,7 @@ const ScheduleModal = (props: any) => {
 
   const handleSave = () => {
     form.validateFields().then((values) => {
-      message.success('Interview Scheduled Successfully!');
+      message.success("Interview Scheduled Successfully!");
       console.log(values);
       form.resetFields();
       props.setOpen((prev: boolean) => !prev);
@@ -19,6 +27,7 @@ const ScheduleModal = (props: any) => {
 
   return (
     <Modal
+      centered
       title="Schedule Interview"
       closable={false}
       open={props.visible}

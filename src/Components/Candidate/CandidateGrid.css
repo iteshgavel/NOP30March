@@ -67,3 +67,9 @@
 .filterPane {
   padding-right: 20px;
 }
+
+.bulkUploadModalFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
