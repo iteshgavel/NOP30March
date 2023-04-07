@@ -15,16 +15,11 @@
   border-radius: 10px;
 }
 
-.row {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 .AddIcon {
   font-size: 25px;
   padding-top: 25px;
 }
 
-.ant-collapse-large >.ant-collapse-item >.ant-collapse-header {
-    padding: 10px 10px;
+.ant-collapse-large > .ant-collapse-item > .ant-collapse-header {
+  padding: 10px 10px;
 }

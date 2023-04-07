@@ -1,3 +1,22 @@
-.resetBtn{
-    float: right;
+.filterPane {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 10px 10px 10px;
+  background-color: white;
+  align-items: center;
+}
+
+.dropdowns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inputField {
+  border-radius: 0;
+}
+
+.academicResetButton {
+  display: flex;
+  justify-content: end;
 }

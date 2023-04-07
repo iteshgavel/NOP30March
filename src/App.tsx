@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Nav from "./Components/LeftNavigation/LeftNavigation";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Button, ConfigProvider } from "antd";
 import Home from "./Pages/Home";
 import Candidate from "./Pages/Candidate";
 import Interview from "./Pages/Interview";
@@ -12,8 +13,10 @@ import { rDataType, rdata } from "./Components/Candidate/DummyCandidateData";
 import { iDataType, idata } from "./Components/Interview/DummyInterviewData";
 import InterviewInfo from "./Components/Interview/InterviewInfo";
 import AddCandidate from "./Components/Candidate/AddCandidate/AddCandidate";
+import FilterPanBar from "./Components/FilterPane/FilterPane";
 
 function App() {
+  const [searchedText, setSearchedText] = React.useState("");
   const [collapsed, setCollapsed] = React.useState<boolean>(false);
   const [content, setContent] = React.useState<rDataType[]>(rdata);
   const [showingCandidateInfo, setShowingCandidateInfo] =
@@ -24,7 +27,16 @@ function App() {
     React.useState<iDataType>(interviewContent[0]);
   return (
     <>
-      <BrowserRouter>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#356966",
+            fontFamily: "Segoe UI",
+            fontSize: 18,
+          },
+        }}
+      >
+        {/* <BrowserRouter>
         <div className="App">
           <Header />
           <div className="main">
@@ -89,7 +101,10 @@ function App() {
             </div>
           </div>
         </div>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <FilterPanBar setSearchedText={setSearchedText}
+            setContent={setContent}/>
+      </ConfigProvider>
     </>
   );
 }

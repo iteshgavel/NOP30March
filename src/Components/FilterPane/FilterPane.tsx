@@ -8,11 +8,18 @@ import {
   InputNumber,
   Button,
   Select,
+  Divider,
+  Form,
 } from "antd";
-import { CaretDownOutlined, FilterOutlined, RedoOutlined, UndoOutlined } from "@ant-design/icons";
+import {
+  CaretDownOutlined,
+  FilterOutlined,
+  RedoOutlined,
+  UndoOutlined,
+} from "@ant-design/icons";
 import { rdata, rDataType } from "../Candidate/DummyCandidateData";
 import { SearchOutlined } from "@ant-design/icons";
-import '../FilterPane/FilterPane.css'
+import "../FilterPane/FilterPane.css";
 const { Option } = Select;
 
 //Dinamically getting all college names from table.
@@ -89,7 +96,7 @@ const FilterPanBar = (props: any) => {
       number: 0,
     },
   });
-  
+
   const [tempAcadFilters, setTempAcadFilters] = useState({
     SSC: {
       comparision: "gte",
@@ -114,8 +121,8 @@ const FilterPanBar = (props: any) => {
   });
   const [openCollegeFilter, setOpenCollegeFilter] = useState(false);
   const [openAppliedFilter, setOpenAppliedFilter] = useState(false);
-  const [collegeFilterSearch,setCollegeFilterSearch]=useState("");
-  const [appliedFilterSearch,setAppliedFilterSearch]=useState("");
+  const [collegeFilterSearch, setCollegeFilterSearch] = useState("");
+  const [appliedFilterSearch, setAppliedFilterSearch] = useState("");
   const [openAcadFilter, setOpenAcadFilter] = useState(false);
   const resetFilter = () => {
     setSelectedOptionsCollege([]);
@@ -173,8 +180,8 @@ const FilterPanBar = (props: any) => {
 
     if (isOptionSelected) {
       setSelectedOptionsCollege(
-        selectedOptionsCollege.filter((o) => o.value !== option.value),
-        );
+        selectedOptionsCollege.filter((o) => o.value !== option.value)
+      );
     } else {
       setSelectedOptionsCollege([...selectedOptionsCollege, option]);
     }
@@ -186,7 +193,9 @@ const FilterPanBar = (props: any) => {
     );
 
     if (isOptionSelected) {
-      setSelectedOptionsApplied(selectedOptionsApplied.filter((o) => o.value !== option.value));
+      setSelectedOptionsApplied(
+        selectedOptionsApplied.filter((o) => o.value !== option.value)
+      );
     } else {
       setSelectedOptionsApplied([...selectedOptionsApplied, option]);
     }
@@ -194,57 +203,81 @@ const FilterPanBar = (props: any) => {
 
   const CollegeMenu = (
     <Menu style={{ maxHeight: "200px", overflowY: "auto" }}>
-      <Menu.Item>
+      <div
+        style={{
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          position: "sticky",
+          top: 0,
+          backgroundColor: "white",
+          zIndex: 1,
+        }}
+      >
         <Input
-          addonBefore={
-            <>
-              <SearchOutlined />
-            </>
-          }
+          prefix={<SearchOutlined />}
           placeholder={`search`}
-          onChange={(event)=>{console.log(event);setCollegeFilterSearch(event.target.value)}}
-        ></Input>
-      </Menu.Item>
-      {uniqueCollege.filter((Option)=>Option.value.toLowerCase().includes(collegeFilterSearch.toLowerCase())).map((option) => (
-        <Menu.Item key={option.value}>
-          <Checkbox
-            checked={selectedOptionsCollege.some(
-              (o) => o.value === option.value
-            )}
-            onChange={() => handleOptionSelectCollege(option)}
-          >
-            {option.label}
-          </Checkbox>
-        </Menu.Item>
-      ))}
+          onChange={(event) => {
+            console.log(event);
+            setCollegeFilterSearch(event.target.value);
+          }}
+        />
+      </div>
+      {uniqueCollege
+        .filter((Option) =>
+          Option.value.toLowerCase().includes(collegeFilterSearch.toLowerCase())
+        )
+        .map((option) => (
+          <Menu.Item key={option.value}>
+            <Checkbox
+              checked={selectedOptionsCollege.some(
+                (o) => o.value === option.value
+              )}
+              onChange={() => handleOptionSelectCollege(option)}
+            >
+              {option.label}
+            </Checkbox>
+          </Menu.Item>
+        ))}
     </Menu>
   );
 
   const Appliedmenu = (
     <Menu style={{ maxHeight: "200px", overflowY: "auto" }}>
-      <Menu.Item>
+      <div
+        style={{
+          paddingLeft: "10px",
+          paddingRight: "10px",
+          position: "sticky",
+          top: 0,
+          backgroundColor: "white",
+          zIndex: 1,
+        }}
+      >
         <Input
-          addonBefore={
-            <>
-              <SearchOutlined />
-            </>
-          }
-          onChange={(event)=>{console.log(event);setAppliedFilterSearch(event.target.value)}}
+          prefix={<SearchOutlined />}
+          onChange={(event) => {
+            console.log(event);
+            setAppliedFilterSearch(event.target.value);
+          }}
           placeholder={`Search`}
-        ></Input>
-      </Menu.Item>
-      {uniqueAppliedFor.filter((Option)=>Option.label.toLowerCase().includes(appliedFilterSearch.toLowerCase())).map((option) => (
-        <Menu.Item key={option.value}>
-          <Checkbox
-            checked={selectedOptionsApplied.some(
-              (o) => o.value === option.value
-            )}
-            onChange={() => handleOptionSelectApplied(option)}
-          >
-            {option.label}
-          </Checkbox>
-        </Menu.Item>
-      ))}
+        />
+      </div>
+      {uniqueAppliedFor
+        .filter((Option) =>
+          Option.label.toLowerCase().includes(appliedFilterSearch.toLowerCase())
+        )
+        .map((option) => (
+          <Menu.Item key={option.value}>
+            <Checkbox
+              checked={selectedOptionsApplied.some(
+                (o) => o.value === option.value
+              )}
+              onChange={() => handleOptionSelectApplied(option)}
+            >
+              {option.label}
+            </Checkbox>
+          </Menu.Item>
+        ))}
     </Menu>
   );
 
@@ -368,115 +401,125 @@ const FilterPanBar = (props: any) => {
   const AcadMenu = (
     <Menu selectable={false}>
       <Menu.Item key="SSC">
-        SSC{" "}
-        <InputNumber
-          style={{ marginLeft: 29, width: 150 }}
-          size="small"
-          min={0}
-          max={100}
-          width={8}
-          onChange={(number) => {
-            setTempAcadFilters((prev) => {
-              var x = { ...prev };
-              if (number !== null) x.SSC.number = number;
-              else x.SSC.number = 0;
-              return x;
-            });
-          }}
-          value={acadFilters.SSC.number}
-          addonBefore={selectSSC}
-          defaultValue={0}
-        />
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ width: "22%" }}>SSC</div>
+          <div>
+            <InputNumber
+              size="small"
+              min={0}
+              max={100}
+              onChange={(number) => {
+                setTempAcadFilters((prev) => {
+                  var x = { ...prev };
+                  if (number !== null) x.SSC.number = number;
+                  else x.SSC.number = 0;
+                  return x;
+                });
+              }}
+              value={acadFilters.SSC.number}
+              addonBefore={selectSSC}
+              defaultValue={0}
+            />
+          </div>
+        </div>
       </Menu.Item>
-
       <Menu.Item key="HSC">
-        HSC{" "}
-        <InputNumber
-          style={{ marginLeft: 27, width: 150 }}
-          size="small"
-          min={0}
-          max={100}
-          width={8}
-          addonBefore={selectHSC}
-          value={acadFilters.HSC.number}
-          onChange={(number) => {
-            setTempAcadFilters((prev) => {
-              var x = { ...prev };
-              if (number !== null) x.HSC.number = number;
-              else x.HSC.number = 0;
-              return x;
-            });
-          }}
-          defaultValue={0}
-        />
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ width: "22%" }}>HSC</div>
+          <div>
+            <InputNumber
+              size="small"
+              min={0}
+              max={100}
+              addonBefore={selectHSC}
+              value={acadFilters.HSC.number}
+              onChange={(number) => {
+                setTempAcadFilters((prev) => {
+                  var x = { ...prev };
+                  if (number !== null) x.HSC.number = number;
+                  else x.HSC.number = 0;
+                  return x;
+                });
+              }}
+              defaultValue={0}
+            />
+          </div>
+        </div>
       </Menu.Item>
       <Menu.Item key="UG">
-        UG{" "}
-        <InputNumber
-          style={{ marginLeft: 34, width: 150 }}
-          size="small"
-          min={0}
-          max={100}
-          width={8}
-          value={acadFilters.UG.number}
-          onChange={(number) => {
-            setTempAcadFilters((prev) => {
-              var x = { ...prev };
-              if (number !== null) x.UG.number = number;
-              else x.UG.number = 0;
-              return x;
-            });
-          }}
-          addonBefore={selectUG}
-          defaultValue={0}
-        />
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ width: "22%" }}>UG</div>
+          <div>
+            <InputNumber
+              size="small"
+              min={0}
+              max={100}
+              value={acadFilters.UG.number}
+              onChange={(number) => {
+                setTempAcadFilters((prev) => {
+                  var x = { ...prev };
+                  if (number !== null) x.UG.number = number;
+                  else x.UG.number = 0;
+                  return x;
+                });
+              }}
+              addonBefore={selectUG}
+              defaultValue={0}
+            />
+          </div>
+        </div>
       </Menu.Item>
       <Menu.Item key="PG">
-        PG{"     "}
-        <InputNumber
-          style={{ marginLeft: 35, width: 150 }}
-          size="small"
-          min={0}
-          max={100}
-          width={8}
-          onChange={(number) => {
-            setTempAcadFilters((prev) => {
-              var x = { ...prev };
-              if (number !== null) x.PG.number = number;
-              else x.PG.number = 0;
-              return x;
-            });
-          }}
-          addonBefore={selectPG}
-          defaultValue={0}
-          value={acadFilters.PG.number}
-        />
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ width: "22%" }}>PG</div>
+          <div>
+            <InputNumber
+              size="small"
+              min={0}
+              max={100}
+              onChange={(number) => {
+                setTempAcadFilters((prev) => {
+                  var x = { ...prev };
+                  if (number !== null) x.PG.number = number;
+                  else x.PG.number = 0;
+                  return x;
+                });
+              }}
+              addonBefore={selectPG}
+              defaultValue={0}
+              value={acadFilters.PG.number}
+            />
+          </div>
+        </div>
       </Menu.Item>
       <Menu.Item key="Diploma">
-        Diploma{" "}
-        <InputNumber
-          size="small"
-          min={0}
-          max={100}
-          width={8}
-          value={acadFilters.Diploma.number}
-          style={{ width: 150 }}
-          onChange={(number) => {
-            setTempAcadFilters((prev) => {
-              var x = { ...prev };
-              if (number !== null) x.Diploma.number = number;
-              else x.Diploma.number = 0;
-              return x;
-            });
-          }}
-          addonBefore={selectDiploma}
-          defaultValue={0}
-        />
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ width: "22%" }}>Diploma</div>
+          <div>
+            <InputNumber
+              size="small"
+              min={0}
+              max={100}
+              value={acadFilters.Diploma.number}
+              onChange={(number) => {
+                setTempAcadFilters((prev) => {
+                  var x = { ...prev };
+                  if (number !== null) x.Diploma.number = number;
+                  else x.Diploma.number = 0;
+                  return x;
+                });
+              }}
+              addonBefore={selectDiploma}
+              defaultValue={0}
+            />
+          </div>
+        </div>
       </Menu.Item>
-      <Menu.Item>
-        <Space className="resetBtn">
+      <br />
+      <div className="academicResetButton">
+        <div>
           <Button
-            onClick={() =>{
+            onClick={() => {
               setTempAcadFilters({
                 SSC: {
                   comparision: "gte",
@@ -522,14 +565,22 @@ const FilterPanBar = (props: any) => {
                 },
               });
             }}
-            
-          
           >
-          <UndoOutlined />Reset
+            <UndoOutlined />
+            Reset
           </Button>
-          <Button onClick={()=>setAcadFilters(tempAcadFilters)}><FilterOutlined />Filter</Button>
-        </Space>
-      </Menu.Item>
+        </div>
+        <div>
+          <Button
+            onClick={() => setAcadFilters(tempAcadFilters)}
+            type="primary"
+            style={{ marginLeft: "20px", marginRight: "10px" }}
+          >
+            <FilterOutlined />
+            Filter
+          </Button>
+        </div>
+      </div>
     </Menu>
   );
 
@@ -645,27 +696,18 @@ const FilterPanBar = (props: any) => {
   );
 
   return (
-    <div
-      className="filterPane"
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "start",
-        alignItems: "center",
-      }}
-    >
-      <div className="searchName">
+    <div className="filterPane">
+      <div className="searchByName">
         <Input
-          style={{ marginLeft: "27px" }}
+          className="inputField"
           placeholder=" Search By Name"
           value={props.searchedText}
           onChange={(e) => props.setSearchedText(e.target.value)}
           prefix={<SearchOutlined />}
         />
       </div>
-
-      <div style={{ marginLeft: "auto" }}>
-        <Space wrap>
+      <div className="dropdowns">
+        <div className="collegeDropdown">
           <Dropdown
             overlay={CollegeMenu}
             onOpenChange={handleOpenCollegeFilterChange}
@@ -673,7 +715,6 @@ const FilterPanBar = (props: any) => {
             trigger={["click"]}
           >
             <Button
-              className="ant-dropdown-link"
               type="link"
               onClick={(e) => e.preventDefault()}
               style={{ color: "black" }}
@@ -684,7 +725,8 @@ const FilterPanBar = (props: any) => {
               </Space>
             </Button>
           </Dropdown>
-
+        </div>
+        <div className="appliedForDropdown">
           <Dropdown
             overlay={Appliedmenu}
             onOpenChange={handleOpenAppliedFilterChange}
@@ -693,7 +735,6 @@ const FilterPanBar = (props: any) => {
           >
             <Button
               type="link"
-              className="ant-dropdown-link"
               onClick={(e) => e.preventDefault()}
               style={{ color: "black" }}
             >
@@ -703,16 +744,17 @@ const FilterPanBar = (props: any) => {
               </Space>
             </Button>
           </Dropdown>
-
+        </div>
+        <div className="academicDropdown">
           <Dropdown
             overlay={AcadMenu}
             onOpenChange={handleOpenAcadFilterChange}
             open={openAcadFilter}
             trigger={["click"]}
+            //overlayStyle={{width: "350px"}}
           >
             <Button
               type="link"
-              className="ant-dropdown-link"
               onClick={(e) => e.preventDefault()}
               style={{ color: "black" }}
             >
@@ -722,7 +764,8 @@ const FilterPanBar = (props: any) => {
               </Space>
             </Button>
           </Dropdown>
-
+        </div>
+        <div className="resetFilter">
           <Button
             type="link"
             icon={<RedoOutlined />}
@@ -731,7 +774,7 @@ const FilterPanBar = (props: any) => {
           >
             Reset Filter
           </Button>
-        </Space>
+        </div>
       </div>
     </div>
   );

@@ -24,28 +24,28 @@ import {
   CloseOutlined,
   CheckOutlined,
   UploadOutlined,
-  MinusCircleFilled,
   DeleteFilled,
 } from "@ant-design/icons";
 import "./AddCandidate.css";
 import type { RadioChangeEvent } from "antd";
 const { Panel } = Collapse;
-//Validation Rules for input fields
-const validateMessages = {
-  required: "${label} is required!",
-  types: {
-    number: "${label} is not a valid number!",
-  },
-  number: {
-    range: "${label} must be between ${min} and ${max}",
-  },
-};
 
 const AddCandidateApp = () => {
   const [form] = Form.useForm();
   const [candidateName, setCandidateName] = useState("");
   const [value, setValue] = useState(1);
   const [submitModalOpen, setSubmitModalOpen] = useState(false);
+
+  //Validation Rules for input fields
+  const validateMessages = {
+    required: "${label} is required!",
+    types: {
+      number: "${label} is not a valid number!",
+    },
+    number: {
+      range: "${label} must be between ${min} and ${max}",
+    },
+  };
 
   const onChange = (e: RadioChangeEvent) => {
     console.log("radio checked", e.target.value);
@@ -96,6 +96,7 @@ const AddCandidateApp = () => {
   return (
     <div className="formBody">
       <Form
+        requiredMark={false}
         form={form}
         layout="vertical"
         name="nest-messages"
@@ -107,7 +108,7 @@ const AddCandidateApp = () => {
         <div className="personalDetail">
           <Row gutter={10}>
             <Col span={6}>
-              <Form.Item name="name" label="Name" rules={[{ required: true }]}>
+              <Form.Item name="name" label="Name*" rules={[{ required: true }]}>
                 <Input
                   placeholder="Please enter user name"
                   onChange={(e) => setCandidateName(e.target.value)}
@@ -117,7 +118,7 @@ const AddCandidateApp = () => {
             <Col span={6}>
               <Form.Item
                 name="email"
-                label="Email"
+                label="Email*  "
                 rules={[{ type: "email", required: true }]}
               >
                 <Input placeholder="Please enter your email address" />
@@ -126,7 +127,7 @@ const AddCandidateApp = () => {
             <Col span={6}>
               <Form.Item
                 name="phone"
-                label="Phone"
+                label="Phone*"
                 rules={[{ required: true }]}
               >
                 <Input placeholder="Please enter your phone number" />
@@ -142,7 +143,7 @@ const AddCandidateApp = () => {
             <Col span={6}>
               <Form.Item
                 name="appliedFor"
-                label="Applied For"
+                label="Applied For*"
                 rules={[{ required: true }]}
               >
                 <Select
@@ -179,7 +180,7 @@ const AddCandidateApp = () => {
             <Col span={6}>
               <Form.Item
                 name="backlog"
-                label="Backlog"
+                label="Backlog*"
                 rules={[{ required: true }]}
               >
                 <InputNumber
@@ -191,10 +192,10 @@ const AddCandidateApp = () => {
             <Col span={6}>
               <Form.Item
                 name="uploadresume"
-                label="Upload Resume"
+                label="Upload Resume*"
                 //rules={[{ required: true }]}
               >
-                <Upload>
+                <Upload style={{ width: "100%" }}>
                   <Button icon={<UploadOutlined />}>
                     Click to Upload Resume
                   </Button>
@@ -219,7 +220,7 @@ const AddCandidateApp = () => {
                   <>
                     {fields.map(({ key, name, ...restField }) => (
                       <Row gutter={10} align="middle">
-                        <Col span={4}>
+                        <Col span={3}>
                           <Dropdown
                             overlay={certificateMenu}
                             trigger={["click"]}
@@ -227,7 +228,11 @@ const AddCandidateApp = () => {
                             <Button
                               type="link"
                               onClick={(e) => e.preventDefault()}
-                              style={{ color: "black", paddingTop: "20px" }}
+                              style={{
+                                color: "black",
+                                paddingTop: "20px",
+                                paddingLeft: 0,
+                              }}
                             >
                               <Space>
                                 Certification
@@ -240,7 +245,7 @@ const AddCandidateApp = () => {
                           <Form.Item
                             {...restField}
                             name={[name, "course"]}
-                            label="Course"
+                            label="Course*"
                             rules={[{ required: true }]}
                           >
                             <Input placeholder="Science" />
@@ -250,7 +255,7 @@ const AddCandidateApp = () => {
                           <Form.Item
                             {...restField}
                             name={[name, "branch"]}
-                            label="Branch"
+                            label="Branch*"
                             rules={[{ required: true }]}
                           >
                             <Input placeholder="Science/commerce/Arts" />
@@ -260,17 +265,17 @@ const AddCandidateApp = () => {
                           <Form.Item
                             {...restField}
                             name={[name, "college"]}
-                            label="College/Institute"
+                            label="College/Institute*"
                             rules={[{ required: true }]}
                           >
                             <Input placeholder="College Name" />
                           </Form.Item>
                         </Col>
-                        <Col span={2}>
+                        <Col span={3}>
                           <Form.Item
                             {...restField}
                             name={[name, "percentage"]}
-                            label="Percentage"
+                            label="Percentage*"
                             rules={[
                               {
                                 type: "number",
@@ -290,7 +295,7 @@ const AddCandidateApp = () => {
                           <Form.Item
                             {...restField}
                             name={[name, "cgpa"]}
-                            label="CGPA"
+                            label="CGPA*"
                             rules={[
                               {
                                 required: true,
@@ -310,7 +315,7 @@ const AddCandidateApp = () => {
                           <Form.Item
                             {...restField}
                             name={[name, "rank"]}
-                            label="Rank"
+                            label="Rank*"
                             rules={[{ type: "number" }]}
                           >
                             <InputNumber
@@ -330,7 +335,7 @@ const AddCandidateApp = () => {
                     ))}
                     <Form.Item>
                       <Row gutter={10} align="middle">
-                        <Col span={4}>
+                        <Col span={3}>
                           <Dropdown
                             overlay={certificateMenu}
                             trigger={["click"]}
@@ -338,7 +343,11 @@ const AddCandidateApp = () => {
                             <Button
                               type="link"
                               onClick={(e) => e.preventDefault()}
-                              style={{ color: "black", paddingTop: "20px" }}
+                              style={{
+                                color: "black",
+                                paddingTop: "20px",
+                                paddingLeft: 0,
+                              }}
                             >
                               <Space>
                                 Certification
@@ -350,7 +359,7 @@ const AddCandidateApp = () => {
                         <Col span={5}>
                           <Form.Item
                             // name="course"
-                            label="Course"
+                            label="Course*"
                             rules={[{ required: true }]}
                           >
                             <Input placeholder="Science" />
@@ -359,7 +368,7 @@ const AddCandidateApp = () => {
                         <Col span={4}>
                           <Form.Item
                             // name="branch"
-                            label="Branch"
+                            label="Branch*"
                             rules={[{ required: true }]}
                           >
                             <Input placeholder="Science/commerce/Arts" />
@@ -368,16 +377,16 @@ const AddCandidateApp = () => {
                         <Col span={4}>
                           <Form.Item
                             // name="college"
-                            label="College/Institute"
+                            label="College/Institute*"
                             rules={[{ required: true }]}
                           >
                             <Input placeholder="College Name" />
                           </Form.Item>
                         </Col>
-                        <Col span={2}>
+                        <Col span={3}>
                           <Form.Item
                             // name="percent"
-                            label="Percentage"
+                            label="Percentage*"
                             rules={[
                               {
                                 type: "number",
@@ -396,7 +405,7 @@ const AddCandidateApp = () => {
                         <Col span={2}>
                           <Form.Item
                             // name="cgpa"
-                            label="CGPA"
+                            label="CGPA*"
                             rules={[
                               {
                                 required: true,
@@ -415,7 +424,7 @@ const AddCandidateApp = () => {
                         <Col span={2}>
                           <Form.Item
                             // name="rank"
-                            label="Rank"
+                            label="Rank*"
                             rules={[{ type: "number" }]}
                           >
                             <InputNumber
@@ -478,6 +487,7 @@ const AddCandidateApp = () => {
                               allowClear={false}
                               placeholder={"Start Date"}
                               placement={"bottomRight"}
+                              style={{ width: "100%" }}
                             />
                           </Form.Item>
                         </Col>
@@ -491,6 +501,7 @@ const AddCandidateApp = () => {
                               allowClear={false}
                               placeholder={"End Date"}
                               placement={"bottomRight"}
+                              style={{ width: "100%" }}
                             />
                           </Form.Item>
                         </Col>
@@ -536,6 +547,7 @@ const AddCandidateApp = () => {
                               allowClear={false}
                               placeholder={"Start Date"}
                               placement={"bottomRight"}
+                              style={{ width: "100%" }}
                             />
                           </Form.Item>
                         </Col>
@@ -545,6 +557,7 @@ const AddCandidateApp = () => {
                               allowClear={false}
                               placeholder={"End Date"}
                               placement={"bottomRight"}
+                              style={{ width: "100%" }}
                             />
                           </Form.Item>
                         </Col>
